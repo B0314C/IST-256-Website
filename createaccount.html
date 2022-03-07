@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Lab 2/style.css">
+  	<title>Create An Account</title>
+</head>
+<body>
+	
+	<a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="../images/clipart3654626.png"></a>
+	<a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="../images/logo-facebookpng-32204.png"></a>
+	<a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="../images/Instagram-logo-transparent-PNG.png"></a>
+	<img class="icon" src="../images/Account Icon.png">
+	<img class="icon" src="../images/cart-icon-28356.png">
+	<img class="icon" src="../images/search-icon-png-9969.png">
+	
+	<h1>Catie's Crystal Cave</h1>
+	<p>A (very) small rock tumbling business in York, PA</p>
+	<a href="contact.html" class="menu edge">Contact</a>
+	<a href="about.html" class="menu">About</a>
+	<a href="shop.html" class="menu">Shop</a>
+	<a href="index.html" class="menu">Home</a>
+	
+	<br><br><br>
+	
+<div class="container">
+	
+	<h2>Create an Account</h2>
+	<br><br>
+	
+    <form onsubmit="validateInput(); return false;">
+		<div class="form-group">
+			<label>First Name: </label>
+			<input type="text" class="form-control" id="fname" placeholder="Enter first name">
+			<p class="invalid" id="fname-feedback"></p>
+		</div>
+		<div class="form-group">
+			<label>Last Name: </label>
+			<input type="text" class="form-control" id="lname" placeholder="Enter last name">
+			<p class="invalid" id="lname-feedback"></p>
+		</div>
+		<div class="form-group">
+			<label>Email: </label>
+			<input type="text" class="form-control" id="email" placeholder="Enter email address">
+			<p class="invalid" id="email-feedback"></p>
+		</div>
+		<div class="form-group">
+			<label>Password: </label>
+			<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+			<p class="invalid" id="pwd-feedback"></p>
+			<input type="password" class="form-control" id="repwd" placeholder="Confirm password">
+			<p class="invalid" id="repwd-feedback"></p>
+		</div>
+		<button type="submit" class="btn">Sign Up</button>
+	</form>
+
+</div><!-- container -->
+
+<script type="text/javascript">
+	function validateInput() {
+		var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var pwd = document.getElementById("pwd").value;
+        var repwd = document.getElementById("repwd").value;
+		var fieldFeedback;
+		var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var jsonObj = {"firstName":null, "lastName":null, "emailAddress":null, "password":null, "passConfirm":null};
+		
+		if (fname == "") {
+			document.getElementById("fname-feedback").innerHTML = "Please enter your first name.";
+			fieldFeedback = document.getElementById("fname");
+			fieldFeedback.style.border = "3px solid red";
+			fieldFeedback.focus();
+            return false;
+		} else {
+			document.getElementById("fname-feedback").innerHTML = "";
+			fieldFeedback = document.getElementById("fname");
+			fieldFeedback.style.border = "3px solid green";
+			fieldFeedback.blur();
+			jsonObj.firstName = fname;
+		} if (lname == "") {
+			document.getElementById("lname-feedback").innerHTML = "Please enter your last name.";
+			fieldFeedback = document.getElementById("lname");
+			fieldFeedback.style.border = "3px solid red";
+			fieldFeedback.focus();
+            return false;
+		} else {
+			document.getElementById("lname-feedback").innerHTML = "";
+			fieldFeedback = document.getElementById("lname");
+			fieldFeedback.style.border = "3px solid green";
+			fieldFeedback.blur();
+			jsonObj.lastName = lname;
+		} if (!email.match(emailFormat)) {
+			document.getElementById("email-feedback").innerHTML = "Please enter a valid email address.";
+			fieldFeedback = document.getElementById("email");
+			fieldFeedback.style.border = "3px solid red";
+			fieldFeedback.focus();
+            return false;
+		} else {
+			document.getElementById("email-feedback").innerHTML = "";
+			fieldFeedback = document.getElementById("email");
+			fieldFeedback.style.border = "3px solid green";
+			fieldFeedback.blur();
+			jsonObj.emailAddress = email;
+		} if (pwd.length < 8) {
+			document.getElementById("pwd-feedback").innerHTML = "Please enter a password with 8 or more characters.";
+			fieldFeedback = document.getElementById("pwd");
+			fieldFeedback.style.border = "3px solid red";
+			fieldFeedback.focus();
+            return false;
+		} else {
+			document.getElementById("pwd-feedback").innerHTML = "";
+			fieldFeedback = document.getElementById("pwd");
+			fieldFeedback.style.border = "3px solid green";
+			fieldFeedback.blur();
+			jsonObj.password = pwd;
+		} if (!repwd.match(pwd)) {
+			document.getElementById("repwd-feedback").innerHTML = "Please enter your password again to confirm it.";
+			fieldFeedback = document.getElementById("repwd");
+			fieldFeedback.style.border = "3px solid red";
+			fieldFeedback.focus();
+            return false;
+		} else {
+			document.getElementById("repwd-feedback").innerHTML = "";
+			fieldFeedback = document.getElementById("repwd");
+			fieldFeedback.style.border = "3px solid green";
+			fieldFeedback.blur();
+			jsonObj.passConfirm = repwd;
+		} 
+		
+		window.alert("First Name: " + jsonObj.firstName + "\n" +
+					"Last Name: " + jsonObj.lastName + "\n" +
+					"Email: " + jsonObj.emailAddress + "\n" +
+					"Password: " + jsonObj.password + "\n" +
+					"Password Confirmation: " + jsonObj.passConfirm);
+		
+		return true;
+	}
+</script>
+	
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.min.js"></script>
+</body>
+</html>
