@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -11,27 +12,32 @@
 
 <body>
 	
-	
-	<form name="accountcreate" align="center" onsubmit="return validatename() || validatelastname() || validatepassword() || validatepasswordtwo() " method="post">
+<form name="accountcreate" align="center" onsubmit="" method="post">
   <div align="center" class="col-lg-6 offset-lg-3">
-	  <label style="color: white" for="First name">First Name</label>
-    <input  type="text" class="form-control" name="firstname" placeholder="First Name" id="firstname">
-		<label style="color: white" for="Last Name">Last Name</label>
-    <input type="text" class="form-control" name="Last Name" placeholder="Last Name" id="lastname" >
-   	 <label style="color: white" for="Phone Number">Phone Number</label> 
-	  <label style="color: maroon" for="Phone Number">*Not required</label> 
-    <input  type="tel" class="form-control" name="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}||[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Phone Number in xxx-xxx-xxxx format" id="Phone Number" > 
-	  <label style="color: white" for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" name="InputtheEmail" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b" placeholder="theEmail" id="otherEmail" >
-		<label style="color: white" for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" name="Password" placeholder="Password - 6 character minimum" id="password" required>
-		<label style="color: white" for="exampleInputPassword1">Confirm Password</label>
-    <input type="password" class="form-control" name="Confirm Password" placeholder="Confirm Password" id="confirmpassword" required>
+	  <label style="color: black" for="Customer Name">Customer Name</label>
+    <input  type="text" class="form-control" name="customername" placeholder="Customer Name" id="Customersname">
+	  <br>
+	  
+   	 <label style="color: black" for="Phone Number">Phone Number</label> 
+    <input  type="tel" class="form-control" name="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}||[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Phone Number in xxx-xxx-xxxx format" id="Phone Number"> 
+	  <br>
+	  
+	  <label style="color: black" for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="InputEmail" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b" placeholder="Email" id="eEmail" >
+	  <br>
+	  
+		<label style="color: black" for="Customer Age">Customer Age</label>
+    <input  type="text" class="form-control" name="TheCustomerAge" placeholder="Age" id="TheAge" required>
+	  <br>
+	  
+        <label style="color: black" for="The Address">Address</label>
+	   <input  type="text" class="form-control" name="TheAddress" placeholder="Address" id="The customer Address" required>
+	  <br>
+	  
     <input type="submit" value="Submit" align="center">
   </div>
 	<br>
   
 </form>
-<br><br><br>
 </body>
 </html>
