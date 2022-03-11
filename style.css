@@ -6,6 +6,7 @@ body {
 
 img.icon {
 	margin: 2px;
+	padding: 0px;
 	width: 40px;
 	float: right;
 }
