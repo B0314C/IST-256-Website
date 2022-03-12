@@ -6,7 +6,7 @@ body {
 
 img.icon {
 	margin: 2px;
-	padding: 0px;
+	padding-top: 20px;
 	width: 40px;
 	float: right;
 }
@@ -38,7 +38,6 @@ div.gallery h2 {
 div.gallery img {
 	width: 30%;
 	padding: 20px;
-	
 }
 
 p {
@@ -58,8 +57,8 @@ a.menu {
 	line-height: 20px;
 	font-family: "Calibri", sans-serif;
 	font-size: 25px;
-	float: right;
 	margin: 10px;
+	float: right;
 	text-decoration: none;
 }
 
