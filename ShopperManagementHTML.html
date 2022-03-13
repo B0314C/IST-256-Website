@@ -53,7 +53,7 @@
 	
 	<br><br><br>
 	
-<form name="accountcrubmit=" method="post">
+<form name="accountcrubmit=">
   <div class="col-lg-6 offset-lg-3 gallery">
 	  <h2>Shopper Account Management</h2>
 	  <br>
@@ -78,10 +78,46 @@
 	   <input  type="text" class="form-control" name="TheAddress" placeholder="Address format as Street Address, City, State, Zip Code" id="The customer Address" required>
 	  <br>
 	  
-    <input style=" color: #A40E4C" type="submit" value="Save Changes" align="center">
+    <input style=" color: #A40E4C" type="submit" value="Save Changes" align="center" onClick="Validate">
   </div>
 	<br>
   
 </form>
+	<script> function Validate(){		  
+			validateAge();
+			validateAddress();
+			storeInput();
+		}
+		function validateAge(){
+			var ageInput = document.getElementById('age').value;
+			try{
+				if(ageInput <= 0) throw "Age must be above 0"
+				if(ageInput > 120) throw "Age must be below 120";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		}
+		  function validateAddress(){
+			var addressInput = String(document.getElementById('adrs').value);
+			try{
+				if(addressInput > 46) throw "Address cannot be more than 46 characters long"
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		  }
+		  storeInput(){
+			var emailInput = String(document.getElementById('eml').value);
+			var addressInput = String(document.getElementById('adrs').value);
+			var nameInput = String(document.getElementById('nme').value);
+			var phoneInput = String(document.getElementById('phnum').value);
+			var ageInput = String(document.getElementById('age').value);
+			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
+			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
+		  }
+</script>
 </body>
 </html>
