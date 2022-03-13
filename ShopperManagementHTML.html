@@ -11,7 +11,42 @@
 </head>
 
 <body>
-	
+	<script> function Validate(){		  
+			validateAge();
+			validateAddress();
+			storeInput();
+		}
+		function validateAge(){
+			var ageInput = String(document.getElementById('age').value);
+			try{
+				if(ageInput <= 0) throw "Age must be above 0";
+				if(ageInput > 120) throw "Age must be below 120";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		
+		  function validateAddress(){
+			var addressInput = String(document.getElementById('adrs').value);
+			try{
+				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		  
+		  function storeInput(){
+			var emailInput = String(document.getElementById('eml').value);
+			var addressInput = String(document.getElementById('adrs').value);
+			var nameInput = String(document.getElementById('nme').value);
+			var phoneInput = String(document.getElementById('phnum').value);
+			var ageInput = String(document.getElementById('age').value);
+			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
+			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
+		  }
+</script>
 	<div class="container">
 
         <div class="row">			
@@ -83,41 +118,6 @@
 	<br>
   
 </form>
-	<script> function Validate(){		  
-			validateAge();
-			validateAddress();
-			storeInput();
-		}
-		function validateAge(){
-			var ageInput = document.getElementById('age').value;
-			try{
-				if(ageInput <= 0) throw "Age must be above 0"
-				if(ageInput > 120) throw "Age must be below 120";
-			}
-			catch(err){
-				alert(err);
-			}
-			}
-		}
-		  function validateAddress(){
-			var addressInput = String(document.getElementById('adrs').value);
-			try{
-				if(addressInput > 46) throw "Address cannot be more than 46 characters long"
-			}
-			catch(err){
-				alert(err);
-			}
-			}
-		  }
-		  storeInput(){
-			var emailInput = String(document.getElementById('eml').value);
-			var addressInput = String(document.getElementById('adrs').value);
-			var nameInput = String(document.getElementById('nme').value);
-			var phoneInput = String(document.getElementById('phnum').value);
-			var ageInput = String(document.getElementById('age').value);
-			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
-			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
-		  }
-</script>
+	
 </body>
 </html>
