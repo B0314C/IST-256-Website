@@ -1,0 +1,126 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!--Brandon-->
+	<script> function Validate(){		  
+			validateAge();
+			validateAddress();
+			storeInput();
+		}
+		function validateAge(){
+			var ageInput = String(document.getElementById('age').value);
+			try{
+				if(ageInput <= 0) throw "Age must be above 0";
+				if(ageInput > 120) throw "Age must be below 120";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		
+		  function validateAddress(){
+			var addressInput = String(document.getElementById('adrs').value);
+			try{
+				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+		  
+		  function storeInput(){
+			var emailInput = String(document.getElementById('eml').value);
+			var addressInput = String(document.getElementById('adrs').value);
+			var nameInput = String(document.getElementById('nme').value);
+			var phoneInput = String(document.getElementById('phnum').value);
+			var ageInput = String(document.getElementById('age').value);
+			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
+			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
+		  }
+</script>
+	<!--Catie-->
+	<div class="container">
+
+        <div class="row">			
+			<div class="col-sm-7">
+				<h1 class="display-3">Catie's Crystal Cave</h1>
+			</div>
+			
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/search-icon-png-9969.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/cart-icon-28356.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="images/Instagram-logo-transparent-PNG.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="images/logo-facebookpng-32204.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="images/clipart3654626.png"></a>
+            </div>
+        </div>
+		
+		<div class="row">
+			<div class="col-sm-5">
+				<p>A (very) small tumbling business in York, PA</p>
+			</div>
+			<div class="col-sm-7 menu-row">
+                <a href="index.html" class="menu edge">Contact Us</a>
+                <a href="index.html" class="menu">About Us</a>
+                <a href="ShopperManagementHTML.html" class="menu">Account</a>
+                <a href="index.html" class="menu">Shop</a>
+				<a href="index.html" class="menu">Home</a>
+            </div>
+		</div>
+
+	</div>
+	
+	<br><br><br>
+	
+<!--Josh-->
+<form name="accountcrubmit=">
+  <div class="col-lg-6 offset-lg-3 gallery">
+	  <h2 align="center">Shopper Account Management</h2>
+	  <br>
+		  
+	  <label style="color: #A40E4C" for="Customer Name">Customer Name</label>
+    <input  type="text" class="form-control" name="customername" placeholder="Customer Name" id="nme" required>
+	  <br>
+	  
+   	 <label style="color: #A40E4C" for="Phone Number">Phone Number</label> 
+    <input  type="tel" class="form-control" name="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}||[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Phone Number in xxx-xxx-xxxx format" id="phnum"> 
+	  <br>
+	  
+	  <label style="color: #A40E4C" for="exampleInputEmail1">Email Address</label>
+    <input type="email" class="form-control" name="InputEmail" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b" placeholder="Email" id="eml" >
+	  <br>
+	  
+		<label style="color: #A40E4C" for="Customer Age">Customer Age</label>
+    <input  type="text" class="form-control" name="TheCustomerAge" placeholder="Age" id="age" required>
+	  <br>
+	  
+        <label style="color: #A40E4C" for="The Address">Address</label>
+	   <input  type="text" class="form-control" name="TheAddress" placeholder="Address format as Street Address, City, State, Zip Code" id="adrs" required>
+	  <br>
+	  
+    <input style=" color: #A40E4C" type="button" value="Save Changes" align="center" onClick="Validate()">
+  </div>
+	<br>
+  
+</form>
+	
+</body>
+</html>
