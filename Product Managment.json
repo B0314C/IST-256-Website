@@ -1,0 +1,47 @@
+{"ProdID":"001","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"61","ProdPrice":"Filler Price"},
+
+{"ProdID":"002","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"63","ProdPrice":"Filler Price"},
+
+{"ProdID":"003","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"66","ProdPrice":"Filler Price"},
+
+{"ProdID":"004","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"22","ProdPrice":"Filler Price"},
+
+{"ProdID":"005","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"33","ProdPrice":"Filler Price"},
+
+{"ProdID":"006","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"61","ProdPrice":"Filler Price"},
+
+{"ProdID":"007","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"59","ProdPrice":"Filler Price"},
+
+{"ProdID":"008","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"55","ProdPrice":"Filler Price"},
+
+{"ProdID":"009","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"39","ProdPrice":"Filler Price"},
+
+{"ProdID":"010","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"011","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"012","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"013","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"014","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"015","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}
+
+{"ProdID":"016","Product_Description":"Product description Goes here","ProdCateg":"Category goes here",
+ "UnitOfMeasures":"23","ProdPrice":"Filler Price","ProductTexture":"Filler Texture"}];
