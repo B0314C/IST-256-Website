@@ -10,22 +10,22 @@
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 </head>
 	<script> function Validate(){		  
-			validateAge();
-			validateAddress();
+			validateID();
+			validateCategory();
 			storeInput();
 		}
-		function validateAge(){
-			var ageInput = String(document.getElementById('age').value);
+		function validateID(){
+			var IDlength = String(document.getElementById('A').value.length);
 			try{
-				if(ageInput <= 0) throw "Age must be above 0";
-				if(ageInput > 120) throw "Age must be below 120";
+				if(IDlength < 3);throw "Must be 3 digit number";
+				if(IDlength > 3) throw "Must be 3 digit number";
 			}
 			catch(err){
 				alert(err);
 			}
 			}
 		
-		  function validateAddress(){
+		  function validateCategory(){
 			var addressInput = String(document.getElementById('adrs').value);
 			try{
 				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
@@ -34,16 +34,14 @@
 				alert(err);
 			}
 			}
-		  document.getElementById("A").innerHTML = obj.name;
-		  function storeInput(){
-			var emailInput = String(document.getElementById('eml').value);
-			var addressInput = String(document.getElementById('adrs').value);
-			var nameInput = String(document.getElementById('nme').value);
-			var phoneInput = String(document.getElementById('phnum').value);
-			var ageInput = String(document.getElementById('age').value);
-			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
-			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
-		  }
+		  //document.getElementById("A").innerHTML = obj.name;
+		  //function storeInput(){
+			//var Email = String(document.getElementById('eml').value);
+			//var addressInput = String(document.getElementById('adrs').value);
+			
+			//var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":IDlength, "Phone":phoneInput}]};
+			//alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone //Number: "+JSON.Test[0].Phone);
+		  //}
 </script>
 <body>	 
 	<!--Catie-->
@@ -101,10 +99,8 @@
 	    <input type="text" class="form-control" id="E" placeholder="Product Unit Of Measure">
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Price</label>
 	    <input type="text" class="form-control" id="F" placeholder="Product Price">
-		<label style="color: #A40E4C" for="exampleInputPassword1">Product Texture</label>
-	    <input type="text" class="form-control" id="G" placeholder="Product Texture">
 	    <br>
-	  <input style=" color: #A40E4C" type="button" value="Save Changes" align="center" onClick="">
+	  <input style=" color: #A40E4C" type="button" value="Save Changes" align="center" onClick="Validate()">
   </div>
 </form>
 	<form>
