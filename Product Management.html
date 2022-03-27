@@ -44,6 +44,16 @@
 			//alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone //Number: "+JSON.Test[0].Phone);
 		  //}
 </script>
+	<script type="text/javascript">
+$("button").click(function(){
+  $.getJSON("Product Management.json", function(result){
+    $.each(result, function(i, field){
+      $("div").append(field + " ");
+    });
+  });
+});
+
+</script>
 <body>	 
 	<!--Catie-->
 	<div class="container">
@@ -88,7 +98,9 @@
 			<br><br>
 			<input align="center" type="search"> <input align="center" style=" color: #A40E4C" type="submit" onClick="">
 			<br><br>
-			<button> Get info </button>
+			<button>
+			Please HIT ME for intended effect
+			</button>
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
 	    <input  type="text" class="form-control" id="A" placeholder="Product ID">
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label>
@@ -109,13 +121,3 @@
 	</form>
 </body>
 </html>
-<script type="text/javascript">
-$("button").click(function(){
-  $.getJSON("Product Management.json", function(result){
-    $.each(result, function(i, field){
-      $("div").append(field + " ");
-    });
-  });
-});
-
-</script>
