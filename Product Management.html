@@ -86,8 +86,9 @@
 		<div class="col-lg-6 offset-lg-3 gallery">	
 		<h2 align="center">Product Management</h2>
 			<br><br>
-			<input align="center" type="search"> <input align="center" style=" color: #A40E4C" type="submit" onClick="search submit">
+			<input align="center" type="search"> <input align="center" style=" color: #A40E4C" type="submit" onClick="">
 			<br><br>
+			<button> Get info </button>
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
 	    <input  type="text" class="form-control" id="A" placeholder="Product ID">
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label>
@@ -109,7 +110,7 @@
 </body>
 </html>
 <script type="text/javascript">
-$("search submit").click(function(){
+$("button").click(function(){
   $.getJSON("Product Management.json", function(result){
     $.each(result, function(i, field){
       $("div").append(field + " ");
