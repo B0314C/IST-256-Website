@@ -83,3 +83,21 @@ button {
 	background-color: #50808E;
 	color: white;
 }
+
+button.search-result:hover {
+	background-color: #6FD08C;
+	color: white;
+}
+
+button.search-result {
+	display: block;
+	margin: auto;
+	background-color: #50808E;
+	color: white;
+}
+
+ul.search-result {
+	list-style-type: none;
+	text-align: left;
+}
+

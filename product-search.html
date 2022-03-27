@@ -7,9 +7,24 @@
 <title>Product Search</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-<script>
-	$(function() {
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		var products [];
 		
+		$("button").hide();
+		
+		$.getJSON('products.json', function(data) {
+		  	$.each(data.product, function(i, f){
+				var prodTitle = f.ProdTitle;
+				var prodID = f.ProdID;
+				var prodCateg = f.ProdCateg;
+				
+				$(".search-title").text(prodTitle);
+				$(".search-num").text(prodID);
+				$(".search-categ").text(prodCateg);
+			});
+		});
 	});
 </script>
 </head>
@@ -55,7 +70,36 @@
 	<div class="col-lg-6 offset-lg-3 gallery">	
 		<h2 align="center">Product Management</h2>
 		<br>
-		<input type="text" class="form-control" placeholder="Search">
-	</div>
+		<input type="text" class="form-control" placeholder="Search for a product">
+	  <br>
+	  <button type="button" class="btn btn-block search-result" onclick="">
+			<ul class="search-result">
+				<li class="search-title">Product Title</li>
+				<li class="search-num">Product Number</li>
+				<li class="search-info">Product Category</li>
+			</ul>
+		</button>
+		<button type="button" class="btn btn-block search-result" onclick="">
+			<ul class="search-result">
+				<li class="search-title">Product Title</li>
+				<li class="search-num">Product Number</li>
+				<li class="search-categ">Product Category</li>
+			</ul>
+		</button>
+		<button type="button" class="btn btn-block search-result" onclick="">
+			<ul class="search-result">
+				<li class="search-title">Product Title</li>
+				<li class="search-num">Product Number</li>
+				<li class="search-categ">Product Category</li>
+			</ul>
+		</button>
+		<button type="button" class="btn btn-block search-result" onclick="">
+			<ul class="search-result">
+				<li class="search-title">Product Title</li>
+				<li class="search-num">Product Number</li>
+				<li class="search-categ">Product Category</li>
+			</ul>
+		</button>
+</div>
 </body>
 </html>
