@@ -47,7 +47,7 @@
 </script>
 	<script type="text/javascript">
 $("button").click(function(){
-  $.getJSON("Product Management.json", function(result){
+  $.getJSON("products.json", function(result){
     $.each(result, function(i, field){
       $("div").append(field + " ");
     });
