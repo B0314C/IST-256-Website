@@ -10,23 +10,45 @@
 	
 <script type="text/javascript">
 	$(document).ready(function(){
-		var products [];
+		var products[];
 		
-		$("button").hide();
-		
-		$.getJSON('products.json', function(data) {
-		  	$.each(data.product, function(i, f){
-				var prodTitle = f.ProdTitle;
-				var prodID = f.ProdID;
-				var prodCateg = f.ProdCateg;
+		$.getJSON('products.json', function() {
+		  	$.each(data.product, function(i, field){
+				//var prodInfo[];
 				
-				$("button").show();
+				var prodTitle = field.ProdTitle;				
+				var prodID = field.ProdID;
+				var prodCateg = field.ProdCateg;
 				
-				$(".search-title").text(prodTitle);
-				$(".search-num").text(prodID);
-				$(".search-categ").text(prodCateg);
+				products.push([prodTitle, prodID, prodCateg]);
 			});
 		});
+		
+		function productList() {
+			
+		}
+	});
+	
+		//var products [];
+//		
+//		//$("button").hide();
+//		
+//		$.getJSON('products.json', function(data) {
+//		  	$.each(data.product, function(i, f){
+//				var prodTitle = f.ProdTitle;
+//				var prodID = f.ProdID;
+//				var prodCateg = f.ProdCateg;
+//				
+//				var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"\">";
+//				var buttonClose = "</button>";
+//				
+//				$("body").append();
+//				
+//				$(".search-title").text(prodTitle);
+//				$(".search-num").text(prodID);
+//				$(".search-categ").text(prodCateg);
+//			});
+//		});
 	});
 </script>
 </head>
@@ -74,7 +96,7 @@
 		<br>
 		<input type="text" class="form-control" placeholder="Search for a product">
 	  <br>
-	  <button type="button" class="btn btn-block search-result" onclick="">
+	  <!--<button type="button" class="btn btn-block search-result" onclick="">
 			<ul class="search-result">
 				<li class="search-title">Product Title</li>
 				<li class="search-num">Product Number</li>
@@ -101,7 +123,7 @@
 				<li class="search-num">Product Number</li>
 				<li class="search-categ">Product Category</li>
 			</ul>
-		</button>
+		</button>-->
 </div>
 </body>
 </html>
