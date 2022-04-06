@@ -36,9 +36,15 @@
 			var Measure = String(document.getElementById('E').value);
 			var MinPrice = String(document.getElementById('F').value);
 			var MaxPrice = String(document.getElementById('G').value);
-			var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]}
+			var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
 			
-			$(document).ready(function(){$.getJSON()});
+			$(document).ready(function(){$.getJSON("product.json"), function(data){
+				var products = [];
+				$.each(data, function(ID){
+					products.push()
+				});
+			}
+										});
 		}
 			function buttonPress(){
 				Validate();
