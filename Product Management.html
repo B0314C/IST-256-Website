@@ -26,7 +26,25 @@
 				alert("Category Must Be Either Rough or Tumbled");
 				return false;
 				}
-			}			
+			}	
+		//Brandon
+		function saveChanges(){
+			var ID = String(document.getElementById('A').value);
+			var Title = String(document.getElementById('B').value);
+			var Desc = String(document.getElementById('C').value);
+			var Cate = String(document.getElementById('D').value);
+			var Measure = String(document.getElementById('E').value);
+			var MinPrice = String(document.getElementById('F').value);
+			var MaxPrice = String(document.getElementById('G').value);
+			var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]}
+			
+			$(document).ready(function(){$.getJSON()});
+		}
+			function buttonPress(){
+				Validate();
+				saveChanges();
+			}
+		//End Brandon
 	</script>
 <body>	 
 	<!--Catie-->

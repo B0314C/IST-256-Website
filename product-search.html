@@ -8,6 +8,7 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 	
+<!--Catie-->
 <script type="text/javascript">
 	$(document).ready(function(){
 		var products[];
@@ -21,11 +22,25 @@
 				var prodCateg = field.ProdCateg;
 				
 				products.push([prodTitle, prodID, prodCateg]);
+				
+				
+//				var listOfProducts = productList(prodTitle, prodID, prodCateg);
+//				window.alert(listOfProducts);
 			});
 		});
 		
-		function productList() {
+		function searchProducts()
+		
+		function productList(var prodTitle, var prodID, var prodCateg) {
+			var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"\">";
+				var listOpen = "<ul class=\"search-result\">";
+					var listItem1 = "<li class=\"search-title\">" + prodTitle + "</li>";
+					var listItem2 = "<li class=\"search-num\">" + prodID + "</li>";
+					var listItem3 = "<li class=\"search-categ\">" + prodCateg + "</li>";
+				var listClose = "</ul>"
+			var buttonClose = "</button>";
 			
+			return buttonOpen + listOpen + listItem1 + listItem2 + listItem3 + listClose + buttonClose;
 		}
 	});
 	
