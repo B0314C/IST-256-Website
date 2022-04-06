@@ -13,14 +13,14 @@
 </head>
 	<script>
 		function validateID() {  //this is the validation of the first name not being empty. 
-  var x = document.forms["Productmanager"]["AID"].value.length;
+  var x = document.getElementById('A').value.length;
   if (x != 3) {
     alert("ID must be 3 character long");
     return false;
   }
 }
-	function validateCategory() { //this is validation of the last name not being empty
-  var x = document.forms["Productmanager"]["DCAT"].value;
+		function validateCategory() { //this is validation of the last name not being empty
+  var x = document.getElementById('D').value;
   if !(x = "rough" || x = "tumbled"){
     alert("Must be either rough or tumbled");
     return false;
