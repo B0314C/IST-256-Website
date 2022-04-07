@@ -12,7 +12,7 @@
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 </head>
 	<script>
-		function validateID() {  //this is the validation of the first name not being empty. 
+		function validateID() {  //this is the validation of the first name not being empty.
   var x = document.getElementById('A').value.length;
   if (x != 3) {
     alert("ID must be 3 character long");
@@ -26,8 +26,8 @@
     return false;
   }
 }
-		
-		//Brandon
+
+		//Brandon is a person
 		function saveChanges(){
 			var ID = String(document.getElementById('A').value);
 			var Title = String(document.getElementById('B').value);
@@ -37,7 +37,7 @@
 			var MinPrice = String(document.getElementById('F').value);
 			var MaxPrice = String(document.getElementById('G').value);
 			var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-			
+
 			$(document).ready(function(){$.getJSON("product.json"), function(data){
 				var products = [];
 				$.each(data, function(ID){
@@ -52,10 +52,10 @@
 			}
 		//End Brandon
 	</script>
-<body>	 
+<body>
 	<!--Josh-->
 	<div class="container">
-        <div class="row">			
+        <div class="row">
 			<div class="col-sm-7">
 				<h1 class="display-3">Catie's Crystal Cave</h1>
 			</div>
@@ -89,11 +89,11 @@
 		</div>
 	</div>
 	<br><br><br>
-	
-<form name="accountcreate" align="center" onsubmit="validateID() ||  validateCategory()" >	
-		<div class="col-lg-6 offset-lg-3 gallery">	
+
+<form name="accountcreate" align="center" onsubmit="validateID() ||  validateCategory()" >
+		<div class="col-lg-6 offset-lg-3 gallery">
 		<h2 align="center">Product Management</h2>
-			<br>	
+			<br>
 			 <!╌ This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
 	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
