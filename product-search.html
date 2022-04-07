@@ -12,31 +12,38 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var products[];
+		var prodTitle;
+		var prodID;
 		
+		// Loads data from JSON document
 		$.getJSON('products.json', function() {
 		  	$.each(data.product, function(i, field){
 				//var prodInfo[];
 				
-				var prodTitle = field.ProdTitle;				
-				var prodID = field.ProdID;
-				var prodCateg = field.ProdCateg;
+				prodTitle = field.ProdTitle;				
+				prodID = field.ProdID;
 				
-				products.push([prodTitle, prodID, prodCateg]);
-				
-				
-//				var listOfProducts = productList(prodTitle, prodID, prodCateg);
-//				window.alert(listOfProducts);
+				products.push([prodTitle, prodID]);
 			});
 		});
 		
-		function searchProducts()
+		// Searches products
+		$(".search").keyup(function(){
+			var searchField = $(this).val();
+			var regExp = new RegExp(searchField, "i");
+			
+			$.each(data, function(i, field){
+				if ((val.ProdTitle.search(regExp) != -1) || (val.ProdID.search(regExp) != -1)) {
+					productButtons(prodTitle, prodID);
+				}
+			});
+		});
 		
-		function productList(var prodTitle, var prodID, var prodCateg) {
+		function productButtons(var prodTitle, var prodID) {
 			var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"\">";
 				var listOpen = "<ul class=\"search-result\">";
 					var listItem1 = "<li class=\"search-title\">" + prodTitle + "</li>";
 					var listItem2 = "<li class=\"search-num\">" + prodID + "</li>";
-					var listItem3 = "<li class=\"search-categ\">" + prodCateg + "</li>";
 				var listClose = "</ul>"
 			var buttonClose = "</button>";
 			
@@ -109,7 +116,7 @@
 	<div class="col-lg-6 offset-lg-3 gallery">	
 		<h2 align="center">Product Management</h2>
 		<br>
-		<input type="text" class="form-control" placeholder="Search for a product">
+		<input type="text" class="form-control search" placeholder="Search for a product">
 	  <br>
 	  <!--<button type="button" class="btn btn-block search-result" onclick="">
 			<ul class="search-result">
