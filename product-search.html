@@ -16,7 +16,7 @@
 		var prodID;
 		
 		// Loads data from JSON document
-		$.getJSON('products.json', function() {
+		$.getJSON("products.json", function() {
 		  	$.each(data.product, function(i, field){
 				//var prodInfo[];
 				
@@ -34,7 +34,7 @@
 			
 			$.each(data, function(i, field){
 				if ((val.ProdTitle.search(regExp) != -1) || (val.ProdID.search(regExp) != -1)) {
-					productButtons(prodTitle, prodID);
+					$(".search-results").append(productButtons(prodTitle, prodID));
 				}
 			});
 		});
@@ -113,7 +113,7 @@
 	</div>
 	<br><br><br>
 	
-	<div class="col-lg-6 offset-lg-3 gallery">	
+	<div class="col-lg-6 offset-lg-3 gallery search-result">	
 		<h2 align="center">Product Management</h2>
 		<br>
 		<input type="text" class="form-control search" placeholder="Search for a product">
