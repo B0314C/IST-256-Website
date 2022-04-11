@@ -36,7 +36,7 @@
 
 
             // Searches products
-            $("#search").keyup(function(){
+            $("#search").keydown(function(){
                 var searchField = $(this).val().toLowerCase();
                 var regExp = new RegExp(searchField);
                 console.log(searchField);
