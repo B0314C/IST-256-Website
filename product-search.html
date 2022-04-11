@@ -8,7 +8,6 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  <!-- This is the first attemp at adding jquery, adding this intitial script section. Unfortunately this was unsucessful so we sent the search function to a secondary page to be used in conjunction with this one. As the jquery on this page was unecessary it was deleted to remove possible redundancy. This is the only part that was kept. Josh worked on this part-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,54 +16,6 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">	
 	<script type="text/javascript">
-		function validaterock() {  //this is the validation of the first name not being empty.
-          var x = document.getElementById('E').value;
-          if (x != "1 Stone") {
-            alert("Unit Of Measure Must Be 1 Stone");
-            return false;
-          }
-        }
-		function validateID() {  //this is the validation of the first name not being empty.
-          var x = document.getElementById('A').value.length;
-          if (x != 3) {
-            alert("ID must be 3 character long");
-            return false;
-          }
-        }
-		function validateCategory() { //this is validation of the last name not being empty
-          var x = document.getElementById('D').value.toLowerCase();
-          if(x != "rough" && x!= "tumbled"){
-            alert("Must be either rough or tumbled" + x);
-            return false;
-          }
-        }
-
-
-		//Brandon
-		function saveChanges(){
-			var ID = String(document.getElementById('A').value);
-			var Title = String(document.getElementById('B').value);
-			var Desc = String(document.getElementById('C').value);
-			var Cate = String(document.getElementById('D').value);
-			var Measure = String(document.getElementById('E').value);
-			var MinPrice = String(document.getElementById('F').value);
-			var MaxPrice = String(document.getElementById('G').value);
-			var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-
-			$(document).ready(function(){$.getJSON("product.json"), function(data){
-				var products = [];
-				$.each(data, function(ID){
-					products.push()
-				});
-			}
-										});
-		}
-		
-        function buttonPress(){
-            Validate();
-            saveChanges();
-        }
-		//End Brandon
 		
         //Catie
         $(document).ready(function(){
@@ -112,8 +63,61 @@
 
                 return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
             }
+			//End Catie
+			
+			//Josh
+            function validate() {
+                validateUnit();
+                validateID();
+                validateCateg();
+            }
+            function validateUnit() {  //this is the validation of the first name not being empty.
+              var x = document.getElementById('E').value;
+              if (x != "1 Stone") {
+                alert("Unit Of Measure Must Be 1 Stone");
+                break;
+              }
+            }
+            function validateID() {  //this is the validation of the first name not being empty.
+              var x = document.getElementById('A').value.length;
+              if (x != 3) {
+                alert("ID must be 3 character long");
+                break;
+              }
+            }
+            function validateCateg() { //this is validation of the last name not being empty
+              var x = document.getElementById('D').value.toLowerCase();
+              if(x != "rough" && x!= "tumbled"){
+                alert("Must be either rough or tumbled" + x);
+                break;
+              }
+            }
+			//End Josh
+
+            //Brandon
+            function saveChanges(){
+                var ID = String(document.getElementById('A').value);
+                var Title = String(document.getElementById('B').value);
+                var Desc = String(document.getElementById('C').value);
+                var Cate = String(document.getElementById('D').value);
+                var Measure = String(document.getElementById('E').value);
+                var MinPrice = String(document.getElementById('F').value);
+                var MaxPrice = String(document.getElementById('G').value);
+                var array = {"Inputs":[{"ID":ID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
+
+            $.getJSON("product.json"), function(data){
+                var products = [];
+                $.each(data, function(ID){
+                    products.push();
+                });
+            });
+
+            function buttonPress(){
+                Validate();
+                saveChanges();
+            }
+            //End Brandon
         });
-		//end Catie
 </script>
 </head>
 
@@ -160,13 +164,11 @@
 		<br>
 		<input type="text" class="form-control" id="search" placeholder="Search for a product">
 	  	<br>
-		<div class="search-result">
-
-  </div>
+		<div class="search-result"></div>
 		<hr>
-<form name="accountcreate" align="center" onsubmit="validateID() ||  validateCategory() || validaterock()" >
+<form name="accountcreate" align="center" onsubmit="validate();" >
 		
-			 <!╌ This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
+			 <!-- This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
 	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label>
