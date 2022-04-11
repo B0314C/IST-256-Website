@@ -7,29 +7,16 @@
 <title>Product Search</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-	
-<script type="text/javascript">
-	$(document).ready(function(){
-		var products [];
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This section is mostly from the previous pages Josh brought over all the necessary repeated content from previous weeks, and made necessary adjustments-->
+<title>Home</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">	
+	<script type="text/javascript">
 		
-<<<<<<< HEAD
-		$("button").hide();
-		
-		$.getJSON('products.json', function(data) {
-		  	$.each(data.product, function(i, f){
-				var prodTitle = f.ProdTitle;
-				var prodID = f.ProdID;
-				var prodCateg = f.ProdCateg;
-				
-				$("button").show();
-				
-				$(".search-title").text(prodTitle);
-				$(".search-num").text(prodID);
-				$(".search-categ").text(prodCateg);
-			});
-		});
-	});
-=======
         //Catie
         $(document).ready(function(){
             var products = [{"ProdID":"001","ProdTitle":"Flashy Tumbled Rainbow Moonstones Healing Crystals","ProdDescription":"If you have purchased rainbow moonstone from my shop before, this batch is even better! Half of them have flash (and those that have flash have a LOT of it), and you can now choose what size you want and whether you want one with flash. The small size stones are around 1\" on the longest side and the large stones are 1.5\" to 2\" on the longest side. The stones with flash are gorgeous, but the ones without flash are beautiful in their own way and often feature striations and little rainbows in sunlight. All stones are polished in a rotary rock tumbler and are shiny without any treatments or oils. If you would like a specific stone, just message me and then put in an order for a stone from the category it is listed under.\n\nMetaphysical properties: calming, activating and aligning all chakras, keeping your mind clear and open, bringing transformation and new opportunities.\n\nAll orders ship in a compostable bubble mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Tumbled","UnitOfMeasures":"1 Stone","MinProdPrice":"$2.50","MaxProdPrice":"$4.50"}, {"ProdID":"002","ProdTitle":"Rough Raw Blue Lace Agate Stones","ProdDescription":"RESTOCKED 1/15 due to popular demand! Every one of these stones is gorgeous and unique! I couldn’t bring myself to tumble them because of their natural formations (including druzy and botryoidal formations), so I’m selling them rough.\n\nLARGE STONES\nStone T is 2.5\" by 2.5\" by 1\" and weighs 4.25 oz. It is a very unique formation with deep blue banding in a triangular shape, a pocket of clear druzy inside, and one edge with druzy along the inside of the matrix.\nStone U is 3\" by 2.5\" by 1\" and weighs 4.85 oz. It has deep blue banding throughout.\nStone V is 3\" by 2\" and has clear druzy on the inside.\nStone W is 2\" by 1.5\" and has one side that is entirely covered in druzy.\nStone X is 2.5\" by 1\" and has one side that is entirely covered in quartz points.\nStone Y is 2\" by 1\" and has one side that is entirely covered in quartz points.\nStone Z is 2.5\" by 1.5\" and has pockets of druzy.\nStone A is 1.5\" by 1\" and has a pocket of quartz points.\nStone B is 2\" by 1.5\" and has druzy on one side.\nStone C is 1.5\" by 1\" and has quartz points.\nStone D is 2\" by 1\" and has lots of quartz points. It looks a bit like an iceberg!\nStone E is 2\" by 1.5\" and has quartz points.\n\nMEDIUM STONES (NEW!)\nMedium stones are in between the small and large sizes, measuring between 1\" and 1.5\" on their longest sides. They are listed as either having druzy/quartz points or not having any, and they are priced accordingly. If you would like a specific stone, just message me, otherwise I will choose at random.\n\nSMALL STONES\nSmall stones are between 0.5\" and 1\" on their longest sides, and chips are smaller than that. There is also an option for both sizes for stones with druzy, stones with slightly larger quartz points, and stones with neither of those. If you would like a specific stone, just message me, otherwise I will choose at random.\n\nAll orders ship in a recycled padded mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Rough","UnitOfMeasures":"1 Stone","MinProdPrice":"$0.25","MaxProdPrice":"$15.00"},
@@ -64,7 +51,7 @@
                         $("div.search-result").hide();
                     }
                 });
-            });
+            });});
 
             function productButtons(prodTitleDisplay, prodIDDisplay) {
                 var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"\">";
@@ -123,15 +110,14 @@
                 $.each(data, function(ID){
                     products.push();
                 });
-            });
+            }
 
             function buttonPress(){
                 Validate();
                 saveChanges();
             }
             //End Brandon
-        });
->>>>>>> parent of bf1eefb (JSON was problem needed }); at the end)
+        }
 </script>
 </head>
 
@@ -174,38 +160,31 @@
 	<br><br><br>
 	
 	<div class="col-lg-6 offset-lg-3 gallery">	
-		<h2 align="center">Product Management</h2>
+		<h2>Product Management</h2>
 		<br>
-		<input type="text" class="form-control" placeholder="Search for a product">
-	  <br>
-	  <button type="button" class="btn btn-block search-result" onclick="">
-			<ul class="search-result">
-				<li class="search-title">Product Title</li>
-				<li class="search-num">Product Number</li>
-				<li class="search-info">Product Category</li>
-			</ul>
-		</button>
-		<button type="button" class="btn btn-block search-result" onclick="">
-			<ul class="search-result">
-				<li class="search-title">Product Title</li>
-				<li class="search-num">Product Number</li>
-				<li class="search-categ">Product Category</li>
-			</ul>
-		</button>
-		<button type="button" class="btn btn-block search-result" onclick="">
-			<ul class="search-result">
-				<li class="search-title">Product Title</li>
-				<li class="search-num">Product Number</li>
-				<li class="search-categ">Product Category</li>
-			</ul>
-		</button>
-		<button type="button" class="btn btn-block search-result" onclick="">
-			<ul class="search-result">
-				<li class="search-title">Product Title</li>
-				<li class="search-num">Product Number</li>
-				<li class="search-categ">Product Category</li>
-			</ul>
-		</button>
+		<input type="text" class="form-control" id="search" placeholder="Search for a product">
+	  	<br>
+		<div class="search-result"></div>
+		<hr>
+<form name="accountcreate" align="center" onsubmit="validate();" >
+		
+			 <!-- This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
+	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
+	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
+	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label>
+	    <input  type="text" class="form-control" name="B" id="B" placeholder="Product Name">
+      <label style="color: #A40E4C" for="exampleInputPassword1">Product Description</label>
+	    <input type="text" class="form-control" name="C" id="C" placeholder="Product Description">
+      <label style="color: #A40E4C" for="exampleInputPassword1">Product Category</label>
+	    <input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category">
+	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Unit Of Measure</label>
+	    <input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure">
+	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Price</label>
+	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price - Format: 10.00" required pattern="^[0-9]+\.?[0-9]{0,2}$">
+			<br>
+	  <input style="color: #A40E4C" type="submit" value="Submit" align="center">
+	</form>
+
 </div>
 </body>
 </html>
