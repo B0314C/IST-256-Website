@@ -67,29 +67,29 @@
 			
 			//Josh
             function validate() {
-                validateUnit();
-                validateID();
-                validateCateg();
+                if (validateUnit() == false || validateID() == false || validateCateg() == false) {
+					
+				}
             }
             function validateUnit() {  //this is the validation of the first name not being empty.
               var x = document.getElementById('E').value;
               if (x != "1 Stone") {
                 alert("Unit Of Measure Must Be 1 Stone");
-                break;
+                return false;
               }
             }
             function validateID() {  //this is the validation of the first name not being empty.
               var x = document.getElementById('A').value.length;
               if (x != 3) {
                 alert("ID must be 3 character long");
-                break;
+                return false;
               }
             }
             function validateCateg() { //this is validation of the last name not being empty
               var x = document.getElementById('D').value.toLowerCase();
               if(x != "rough" && x!= "tumbled"){
                 alert("Must be either rough or tumbled" + x);
-                break;
+                return false;
               }
             }
 			//End Josh
