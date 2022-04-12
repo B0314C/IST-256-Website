@@ -63,9 +63,9 @@
 
                 return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
             }
-		
+
 			function populateFields(prodID) {
-				
+
 			}
 			//End Catie
 
@@ -111,8 +111,11 @@
 				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             $.getJSON("product.json"), function(data){
                 var products = [];
+								console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
                 $.each(data, function(ProductID){
+									console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
                     products.push();
+										console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
                 });
             }
 
