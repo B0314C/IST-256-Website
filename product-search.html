@@ -72,8 +72,8 @@
 				}
             }
             function validateUnit() {  //this is the validation of the first name not being empty.
-              var x = document.getElementById('E').value;
-              if (x != "1 Stone") {
+              var x = document.getElementById('E').value.toLowerCase();
+              if (x != "1 stone" ) {
                 alert("Unit Of Measure Must Be 1 Stone");
                 return false;
               }
@@ -88,7 +88,7 @@
             function validateCateg() { //this is validation of the last name not being empty
               var x = document.getElementById('D').value.toLowerCase();
               if(x != "rough" && x!= "tumbled"){
-                alert("Must be either rough or tumbled" + x);
+                alert("Must be either rough or tumbled");
                 return false;
               }
             }
@@ -104,7 +104,7 @@
                 var MinPrice = String(document.getElementById('F').value);
                 var MaxPrice = String(document.getElementById('G').value);
                 var array = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-
+console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             $.getJSON("product.json"), function(data){
                 var products = [];
                 $.each(data, function(ProductID){
@@ -115,6 +115,7 @@
             function buttonPress(){
                 Validate();
                 saveChanges();
+								console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             }
             //End Brandon
         }
@@ -166,8 +167,8 @@
 	  	<br>
 		<div class="search-result"></div>
 		<hr>
-<form name="accountcreate" align="center" onsubmit="validate();" >
-
+<form name="accountcreate" align="center"  >
+					<!-- onkeydown="return event.key != Enter" -->
 			 <!-- This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
 	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
@@ -182,7 +183,7 @@
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Price</label>
 	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price - Format: 10.00" required pattern="^[0-9]+\.?[0-9]{0,2}$">
 			<br>
-	  <input style="color: #A40E4C" type="submit" value="Submit" align="center">
+	  <input style="color: #A40E4C" type="submit" value="Submit" align="center" onmouseover="validate()" onclick="saveChanges()">
 	</form>
 
 </div>
