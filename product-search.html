@@ -44,33 +44,36 @@
                 $.each(products, function(i, object){
                     if ((regExp.test(products[count].ProdTitle.toLowerCase())) || regExp.test(products[count].ProdID.toLowerCase())) {
                         $("div.search-result").append(productButtons(products[count].ProdTitle, products[count].ProdID));
-                        console.log(productButtons(products[count].ProdTitle, products[count].ProdID));
+                        //console.log(productButtons(products[count].ProdTitle, products[count].ProdID));
                     }
                     else {
                         $("div.search-result").empty();
-                        //$("div.search-result").hide();
                     }
 					count += 1;
                 });
             });});
 
-            function productButtons(prodTitleDisplay, prodIDDisplay) {
-                var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"\">";
+            function productButtons(prodTitle, prodID) {
+                var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"populateFields(" + prodID + ")\">";
                     var listOpen = "<ul class=\"search-result\">";
-                        var listItem1 = "<li class=\"search-title\">" + prodTitleDisplay + "</li>";
-                        var listItem2 = "<li class=\"search-num\">" + prodIDDisplay + "</li>";
+                        var listItem1 = "<li class=\"search-title\">" + prodTitle + "</li>";
+                        var listItem2 = "<li class=\"search-num\">" + prodID + "</li>";
                     var listClose = "</ul>"
                 var buttonClose = "</button>";
 
                 return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
             }
+		
+			function populateFields(prodID) {
+				
+			}
 			//End Catie
 
 			//Josh
             function validate() {
-                if (validateUnit() == false || validateID() == false || validateCateg() == false) {
-
-				}
+                validateUnit();
+				validateID();
+				validateCateg();
             }
             function validateUnit() {  //this is the validation of the first name not being empty.
               var x = document.getElementById('E').value.toLowerCase();
@@ -105,7 +108,7 @@
                 var MinPrice = String(document.getElementById('F').value);
                 var MaxPrice = String(document.getElementById('G').value);
                 var array = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
+				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             $.getJSON("product.json"), function(data){
                 var products = [];
                 $.each(data, function(ProductID){
@@ -116,7 +119,7 @@ console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             function buttonPress(){
                 Validate();
                 saveChanges();
-								console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
+				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
             }
             //End Brandon
         }
