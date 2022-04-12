@@ -71,7 +71,7 @@
 
 			//Josh
             function validate() {
-                validateUnit();
+        validateUnit();
 				validateID();
 				validateCateg();
             }
@@ -101,15 +101,23 @@
             //Brandon
             function saveChanges(){
                 var ProductID = String(document.getElementById('A').value);
+								console.log(ProductID);
                 var Title = String(document.getElementById('B').value);
+								console.log(Title);
                 var Desc = String(document.getElementById('C').value);
+								console.log(Desc);
                 var Cate = String(document.getElementById('D').value);
+								console.log(Cate);
                 var Measure = String(document.getElementById('E').value);
+								console.log(Measure);
                 var MinPrice = String(document.getElementById('F').value);
+								console.log(MinPrice);
                 var MaxPrice = String(document.getElementById('G').value);
-                var array = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-            $.getJSON("product.json"), function(data){
+								console.log(MaxPrice);
+                var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
+				console.log(thearray);
+
+						$("#search").keydown(function(){
                 var products = [];
 								console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
                 $.each(data, function(ProductID){
@@ -117,7 +125,7 @@
                     products.push();
 										console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
                 });
-            }
+            } );
 
             function buttonPress(){
                 Validate();
@@ -187,8 +195,10 @@
 	    <input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category">
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Unit Of Measure</label>
 	    <input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure">
-	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Price</label>
+	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Min Price</label>
 	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price - Format: 10.00" required pattern="^[0-9]+\.?[0-9]{0,2}$">
+		<label style="color: #A40E4C" for="exampleInputPassword1">Product Max Price</label>
+			<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price - Format: 10.00" required pattern="^[0-9]+\.?[0-9]{0,2}$">
 			<br>
 	  <input style="color: #A40E4C" type="submit" value="Submit" align="center" onmouseover="validate()" onclick="saveChanges()">
 	</form>
