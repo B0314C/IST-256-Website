@@ -39,17 +39,18 @@
             $("#search").keydown(function(){
                 var searchField = $(this).val().toLowerCase();
                 var regExp = new RegExp(searchField);
-                console.log(searchField);
+				var count = 0;
 
                 $.each(products, function(i, object){
-                    if ((regExp.test(object.ProdTitle.toLowerCase())) || regExp.test(object.ProdID.toLowerCase())) {
-                        $("div.search-result").append(productButtons(object.ProdTitle, object.ProdID));
-                        $("div.search-result").show();
+                    if ((regExp.test(products[count].ProdTitle.toLowerCase())) || regExp.test(products[count].ProdID.toLowerCase())) {
+                        $("div.search-result").append(productButtons(products[count].ProdTitle, products[count].ProdID));
+                        console.log(productButtons(products[count].ProdTitle, products[count].ProdID));
                     }
                     else {
                         $("div.search-result").empty();
-                        $("div.search-result").hide();
+                        //$("div.search-result").hide();
                     }
+					count += 1;
                 });
             });});
 
