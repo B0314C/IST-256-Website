@@ -49,7 +49,7 @@
                         $("div.search-result").empty();
                     }
                 });
-            });});
+            });  });
 
             function productButtons(prodTitle, prodID) {
                 var buttonOpen = "<button type=\"button\" class=\"btn btn-block search-result\" onclick=\"populateFields(" + prodID + ")\">";
@@ -65,7 +65,7 @@
 
 			function populateFields(prodID) {
 <<<<<<< HEAD
-				
+
 				switch (prodID) {
 					case 101:
 						populateFromSwitch(0);
@@ -114,7 +114,7 @@
 						break;
 				}
 			}
-		
+
 			function populateFromSwitch(index) {
 				document.getElementById('AID').innerHTML = products[index].ProdID;
 =======
@@ -155,36 +155,42 @@
             //Brandon
             function saveChanges(){
                 var ProductID = String(document.getElementById('A').value);
-								console.log(ProductID);
                 var Title = String(document.getElementById('B').value);
-								console.log(Title);
                 var Desc = String(document.getElementById('C').value);
-								console.log(Desc);
                 var Cate = String(document.getElementById('D').value);
-								console.log(Cate);
                 var Measure = String(document.getElementById('E').value);
-								console.log(Measure);
                 var MinPrice = String(document.getElementById('F').value);
-								console.log(MinPrice);
                 var MaxPrice = String(document.getElementById('G').value);
-								console.log(MaxPrice);
-                var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-				console.log(thearray);
+                // var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
+										for(var i=0; i < products.length; i++){
+											if(products[i].ProductID == ProductID)
+											{
+												products[i].ProdID = ProductID.val();
+												products[i].ProdTitle = Title.val();
+												products[i].ProdDescription = Desc.val();
+												products[i].ProdCateg = Cate.val();
+												// products[i]. = Measure.val();
+												// products[i]. = MinPrice.val();
+												// products[i]. = MaxPrice.val();
+											}
 
-						$("#search").keydown(function(){
-                var products = [];
-								console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                $.each(data, function(ProductID){
-									console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                    products.push();
-										console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                });
-            } );
+
+										}
+
+						// $("buttonPress").keydown(function(){
+            //     var products = [];
+						// 		console.log(products);
+            //     $.each(data, function(ProductID){
+						// 			console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
+            //         products.push();
+						// 				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
+            //     });
+            // });
 
             function buttonPress(){
                 Validate();
                 saveChanges();
-				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
+
             }
             //End Brandon
         }
