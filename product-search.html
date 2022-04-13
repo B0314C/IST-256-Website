@@ -138,6 +138,7 @@
         		validateUnit();
 				validateID();
 				validateCateg();
+				bigmoney();
             }
             function validateUnit() {  //this is the validation of the first name not being empty.
               var x = document.getElementById('E').value.toLowerCase();
@@ -157,6 +158,14 @@
               var x = document.getElementById('D').value.toLowerCase();
               if(x != "rough" && x!= "tumbled"){
                 alert("Must be either rough or tumbled");
+                return false;
+              }
+            }
+						function bigmoney() { //this is validation of the last name not being empty
+              var x = document.getElementById('F').value;
+							var money =  "^[$]+\.?[0-9]+\.?[0-9]{0,2}$";
+              if(x != money){
+                alert("Please enter value in $X.XX format");
                 return false;
               }
             }
