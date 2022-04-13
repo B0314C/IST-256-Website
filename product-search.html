@@ -27,10 +27,10 @@
         {"ProdID":113,"ProdTitle":"Tumbled Bloodstone Green Jasper Stones Healing Crystals","ProdDescription":"These small tumbled green jasper stones are gorgeous! Each one is glossy (with no treatments, just polishing grit!) and a rich, dark green. They are natural stones, so each one is a slightly different shape, and there are some color variations. Some have red, yellow, or brown speckles, some have white lines, and some have uneven shades of green. They are all around 1-1.5 inches in size. If you would like a specific one from the pictures, just message me!\n\nMetaphysical Properties: heightens intuition, increases creativity, revitalizes, grounds, and protects.\n\nEvery order ships in a compostable bubble mailer or recycled padded mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Tumbled","UnitOfMeasures":"1 Stone","MinProdPrice":"$3.50","MaxProdPrice":"$3.50"},
         {"ProdID":114,"ProdTitle":"Tumbled Banded Chevron Amethyst Stones Healing Crystals","ProdDescription":"These tumbled banded/chevron amethyst stones are gorgeous! Because they are banded, there are a lot of color variations, ranging from deep purple to light lavender. Not a single stone is the same as any other! They are polished to be mostly glossy. I have grouped them into small, medium, and large sizes at different prices. One of the stones I have listed as \"large\" is actually medium, but it costs more because it has a rainbow in it (very bottom of the large group in the third picture). Message me if you want that stone or another specific one from a picture.\n\nMetaphysical Properties: brings peace of mind and wisdom, enhances intuition, protects, and promotes self-growth\n\nEvery order ships in a compostable bubble mailer or recycled padded mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Tumbled","UnitOfMeasures":"1 Stone","MinProdPrice":"$2.50","MaxProdPrice":"$3.50"},
         {"ProdID":115,"ProdTitle":"Tumbled Pink Rose Quartz Stones Healing Crystals","ProdDescription":"These tumbled rose quartz stones are so shiny! I tumble them myself without using any coating to make them shiny. Each one has a gorgeous blush pink color and natural striations\n\nThey come in three sizes (measured on longest side):\nSmall: About 1\"\nMedium: 1\" to 1.5\"Large: 1.5\" to 2\"\n\nMetaphysical Properties: promotes love (including self-love, friendship, and romantic love), inner healing, trust, and inner peace and comforts grief.\n\nAll orders ship in a compostable bubble mailer or recycled padded mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Tumbled","UnitOfMeasures":"1 Stone","MinProdPrice":"$2.00","MaxProdPrice":"$3.50"}];
-		
+
         //Catie
         $(document).ready(search);
-                        
+
 			// Searches products
 		function search(){
             $("#search").keydown(function(){
@@ -44,13 +44,8 @@
 						console.log(object.ProdID);
                     }
                 });
-<<<<<<< HEAD
             });  });
 
-=======
-            });
-		}
->>>>>>> 51a1163233d4188fe93a51590165376ca0a3dae6
             function productButtons(prodTitle, prodID) {
                 var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick='populateFields("+prodID+")'>";
                     var listOpen = "<ul class='search-result'>";
@@ -65,12 +60,7 @@
             }
 
 			function populateFields(prodID) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
 				$("button.search-result").remove();
->>>>>>> 51a1163233d4188fe93a51590165376ca0a3dae6
 				switch (prodID) {
 					case 101:
 						populateFromSwitch(0);
@@ -193,7 +183,6 @@
 												// products[i]. = MaxPrice.val();
 											}
 
-<<<<<<< HEAD
 
 										}
 
@@ -212,23 +201,6 @@
                 saveChanges();
 
             }
-=======
-				$("#search").keydown(function(){
-                	var products = [];
-					console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                	$.each(data, function(ProductID){
-						console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                    	products.push();
-						console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                	});
-            	});
-
-                function buttonPress(){
-                    validate();
-                    saveChanges();
-                    console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-                }
->>>>>>> 51a1163233d4188fe93a51590165376ca0a3dae6
             //End Brandon
         	}
 </script>
