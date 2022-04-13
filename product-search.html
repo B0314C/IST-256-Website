@@ -138,7 +138,7 @@
         		validateUnit();
 				validateID();
 				validateCateg();
-				bigmoney();
+				//bigmoney();
             }
             function validateUnit() {  //this is the validation of the first name not being empty.
               var x = document.getElementById('E').value.toLowerCase();
@@ -161,14 +161,14 @@
                 return false;
               }
             }
-						function bigmoney() { //this is validation of the last name not being empty
-              var x = document.getElementById('F').value;
-							var money =  "^[$]+\.?[0-9]+\.?[0-9]{0,2}$";
-              if(x != money){
-                alert("Please enter value in $X.XX format");
-                return false;
-              }
-            }
+						// function bigmoney() { //this is validation of the last name not being empty
+            //   var x = document.getElementById('F').value;
+						// 	var money =  "^[$]+\.?[0-9]+\.?[0-9]{0,2}$";
+            //   if(x != money){
+            //     alert("Please enter value in $X.XX format");
+            //     return false;
+            //   }
+            // }
 			//End Josh
 
             //Brandon
@@ -180,6 +180,7 @@
                 var Measure = String(document.getElementById('E').value);
                 var MinPrice = String(document.getElementById('F').value);
                 var MaxPrice = String(document.getElementById('G').value);
+
                 // var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
 										for(var i=0; i < products.length; i++){
 											if(products[i].ProductID == ProductID)
@@ -195,7 +196,7 @@
 
 
 										}
-
+alert("Save Changes");
 						 $("buttonPress").keydown(function(){
                var products = [];
 							console.log(products);
@@ -276,7 +277,7 @@
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Unit Of Measure</label>
 	    <input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure" required>
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Min Price</label>
-	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price"  required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$" >
+	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price"  required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$">
 		<label style="color: #A40E4C" for="exampleInputPassword1">Product Max Price</label>
 			<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price"  required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$">
 			<br>
