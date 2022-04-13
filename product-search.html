@@ -179,9 +179,9 @@
 												products[i].ProdTitle = Title.val();
 												products[i].ProdDescription = Desc.val();
 												products[i].ProdCateg = Cate.val();
-												products[i].UnitOfMeasures = Measure.val();
-												products[i].MinProdPrice = MinPrice.val();
-												products[i].MaxProdPrice = MaxPrice.val();
+												// products[i]. = Measure.val();
+												// products[i]. = MinPrice.val();
+												// products[i]. = MaxPrice.val();
 											}
 
 
@@ -204,7 +204,7 @@
             }
             //End Brandon
         	}
-
+			
 </script>
 </head>
 
@@ -257,21 +257,21 @@
 					<!-- onkeydown="return event.key != Enter" -->
 			 <!-- This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
 	  <label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
-	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID" required>
-	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label >
-	    <input  type="text" class="form-control" name="B" id="B" placeholder="Product Name" required>
+	    <input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
+	  <label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label>
+	    <input  type="text" class="form-control" name="B" id="B" placeholder="Product Name">
       <label style="color: #A40E4C" for="exampleInputPassword1">Product Description</label>
-	    <input type="text" class="form-control" name="C" id="C" placeholder="Product Description" required>
+	    <input type="text" class="form-control" name="C" id="C" placeholder="Product Description">
       <label style="color: #A40E4C" for="exampleInputPassword1">Product Category</label>
-	    <input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category" required>
+	    <input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category">
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Unit Of Measure</label>
-	    <input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure" required>
+	    <input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure">
 	  <label style="color: #A40E4C" for="exampleInputPassword1">Product Min Price</label>
-	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price" required pattern = "^[$]+\.?[0-9]+\.?[0-9]{0,2}$" >
+	    <input type="text" class="form-control" name="F" id="F" placeholder="Product Price - Format: 10.00" required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$">
 		<label style="color: #A40E4C" for="exampleInputPassword1">Product Max Price</label>
-			<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price" required pattern = "^[$]+\.?[0-9]+\.?[0-9]{0,2}$">
+			<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price - Format: 10.00" required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$">
 			<br>
-	  <input style="color: #A40E4C" type="button" value="Submit" align="center" onmouseover="validate()" onclick="saveChanges()">
+	  <input style="color: #A40E4C" type="submit" value="Submit" align="center" onmouseover="validate()" onclick="saveChanges()">
 	</form>
 
 </div>
