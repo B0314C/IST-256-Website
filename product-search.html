@@ -35,14 +35,14 @@
 		$("#search").keyup(function(){
 			var searchField = $(this).val().toLowerCase();
 			var regExp = new RegExp(searchField);
+			// removes previous search
 			$("div.search-results").empty();
-//this is the .replaceWith that might fix this
-//this might fix it .html
+			//creates the search results list
 			$.each(products, function(i, object){
 				if ((regExp.test(object.ProdTitle.toLowerCase())) || regExp.test(object.ProdID)) {
 					$("div.search-results").append(productButtons(object.ProdTitle, object.ProdID));
 					//$("#" + products[i].ProdID).click(populateFields(products[i].ProdID));
-					console.log(object.ProdID);
+					//console.log(object.ProdID);
 				}
 			});
 		});
@@ -136,10 +136,12 @@
 
 	//Josh
 	function validate() {
-		validateUnit();
 		validateID();
+		titleEmpty();
+		descriptionEmpty();
 		validateCateg();
-		//bigmoney();
+		validateUnit();
+		validatePrices();
 	}
 	function validateUnit() {  //this is the validation of the first name not being empty.
 		var x = document.getElementById('E').value.toLowerCase();
@@ -147,8 +149,23 @@
 			alert("Unit Of Measure Must Be 1 Stone");
 			return false;
 		}
+
 	}
-	function validateID() {  //this is the validation of the first name not being empty.
+	function titleEmpty() {
+		var x = document.getElementById('B').value;
+		if (x.length == 0) {
+			alert("Title must contain value");
+			return false;
+		}
+	}
+	function descriptionEmpty() {
+		var y = document.getElementById('C').value;
+		if (y.length == 0) {
+			alert("Description must contain value");
+			return false;
+		}
+	}
+	function validateID() {  //this is the validation of the ID having exactly 3 characters
 		var x = document.getElementById('A').value.length;
 		if (x != 3) {
 			alert("ID must be 3 character long");
@@ -162,19 +179,24 @@
 			return false;
 		}
 	}
-	// function bigmoney() { //this is validation of the last name not being empty
-	//   var x = document.getElementById('F').value;
-	// 	var money =  "^[$]+\.?[0-9]+\.?[0-9]{0,2}$";
-	//   if(x != money){
-	//     alert("Please enter value in $X.XX format");
-	//     return false;
-	//   }
-	// }
-	//End Josh
-
 	//Brandon
+	function validatePrices() { //this is validation of the last name not being empty
+		var x = document.getElementById('F').value;
+		if(!x.startsWith("$")){
+			alert("Please enter minimum value in $X.XX format");
+			return false;
+		}
+		var y = document.getElementById('G').value;
+		if(!y.startsWith("$")){
+			alert("Please enter maximum value in $X.XX format");
+			return false;
+		}
+	}
+	//end Josh
+
 	function saveChanges(){
 		var ProductID = String(document.getElementById('A').value);
+		console.log(ProductID);
 		var Title = String(document.getElementById('B').value);
 		var Desc = String(document.getElementById('C').value);
 		var Cate = String(document.getElementById('D').value);
@@ -184,20 +206,33 @@
 
 		// var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
 		for(var i=0; i < products.length; i++){
-			if(products[i].ProductID == ProductID)
+			if(products[i].ProdID == ProductID)
 			{
-				products[i].ProdID = ProductID.val();
-				products[i].ProdTitle = Title.val();
-				products[i].ProdDescription = Desc.val();
-				products[i].ProdCateg = Cate.val();
-				products[i].UnitOfMeasures = Measure.val();
-				products[i].MinProdPrice = MinPrice.val();
-				products[i].MaxProdPrice = MaxPrice.val();
+				console.log("ProductID Matches " + products[i].ProdID);
+				products[i].ProdID = ProductID;
+				products[i].ProdTitle = Title;
+				products[i].ProdDescription = Desc;
+				products[i].ProdCateg = Cate;
+				products[i].UnitOfMeasures = Measure;
+				products[i].MinProdPrice = MinPrice;
+				products[i].MaxProdPrice = MaxPrice;
+			}
+			else {
+				products.push({"ProdID":ProductID,"ProdTitle":Title,"ProdDescription":Desc,"ProdCateg":Cate,"UnitOfMeasures":Measure,"MinProdPrice":MinPrice,"MaxProdPrice":MaxPrice});
+				// products[products.length].ProdID = ProductID;
+				// products[products.length].ProdTitle = Title;
+				// products[products.length].ProdDescription = Desc;
+				// products[products.length].ProdCateg = Cate;
+				// products[products.length].UnitOfMeasures = Measure;
+				// products[products.length].MinProdPrice = MinPrice;
+				// products[products.length].MaxProdPrice = MaxPrice;
+				break;
 			}
 
 
 		}
-		alert("Save Changes");
+
+		alert("All Changes Saved");
 		$("buttonPress").keydown(function(){
 			var products = [];
 			console.log(products);
@@ -207,14 +242,13 @@
 				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
 			});
 		});
-
-		function buttonPress(){
-			Validate();
-			saveChanges();
-
-		}
-		//End Brandon
 	}
+	function buttonPress(){
+		Validate();
+		saveChanges();
+
+	}
+	//End Brandon
 
 </script>
 </head>
@@ -268,19 +302,23 @@
 			<!-- onkeydown="return event.key != Enter" -->
 			<!-- This was the Form that we were attempting to place the variables to the placeholder positions, so that we could view, and easily edit the values, and then on submit change the vairiable value, to then change the JSON entry. JOSH worked on this -->
 			<label style="color: #A40E4C" for="exampleInputEmail1">Product ID</label>
-			<input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID" required>
+			<input  type="text" class="form-control" name="AID" id="A" placeholder="Product ID">
 			<label style="color: #A40E4C" for="exampleInputEmail1">Product Name</label >
-				<input  type="text" class="form-control" name="B" id="B" placeholder="Product Name" required>
+				<input  type="text" class="form-control" name="B" id="B" placeholder="Product Name">
 				<label style="color: #A40E4C" for="exampleInputPassword1">Product Description</label>
-				<input type="text" class="form-control" name="C" id="C" placeholder="Product Description" required>
+				<input type="text" class="form-control" name="C" id="C" placeholder="Product Description">
 				<label style="color: #A40E4C" for="exampleInputPassword1">Product Category</label>
-				<input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category" required>
+				<input type="text" class="form-control" name="DCAT" id="D" placeholder="Product Category">
+
 				<label style="color: #A40E4C" for="exampleInputPassword1">Product Unit Of Measure</label>
-				<input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure" required>
+				<input type="text" class="form-control" name="E" id="E" placeholder="Product Unit Of Measure">
+
 				<label style="color: #A40E4C" for="exampleInputPassword1">Product Min Price</label>
-				<input type="text" class="form-control" name="F" id="F" placeholder="Product Price"  required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$" required>
+				<input type="text" class="form-control" name="F" id="F" placeholder="Product Price">
+				<!-- required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$" -->
 				<label style="color: #A40E4C" for="exampleInputPassword1">Product Max Price</label>
-				<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price"  required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$" required>
+				<input type="text" class="form-control" name="G" id="G" placeholder="Product Max Price">
+				<!-- required pattern="^[$]+\.?[0-9]+\.?[0-9]{0,2}$" required -->
 				<br>
 				<input style="color: #A40E4C" type="button" value="Submit" align="center" onmouseover="validate()" onclick="saveChanges()">
 			</form>
