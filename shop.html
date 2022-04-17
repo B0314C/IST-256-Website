@@ -267,15 +267,17 @@
 
 	function toggleOpenpanel(){
 		document.getElementById("CatiesCrystalCaveCart").style.width = "25%"
+		document.getElementById("main").style.marginLeft = "25%";
 	}
 
 	function toggleCartClose() {
-		document.getElementById("CatiesCrystalCaveCart").style.width = "0%";
+		document.getElementById("CatiesCrystalCaveCart").style.width = "0%"
+		document.getElementById("main").style.marginLeft= "0%";
 	}
 </script>
 </head>
 
-<body>
+<body id="main">
 
 	<div id="CatiesCrystalCaveCart" class="sidepanel">
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
@@ -322,8 +324,6 @@
 		<input type="text" class="form-control" id="search" placeholder="Search for a product">
 		<br>
 		<div class="search-results"></div>
-		<hr>
-
 
 	</div>
 </body>
