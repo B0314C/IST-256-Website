@@ -128,6 +128,7 @@ ul.search-result {
   top: 0;
   right: 25px;
   font-size: 36px;
+	margin-right: 50px;
 }
 
 .sidepanel a {
@@ -139,6 +140,6 @@ ul.search-result {
   transition: 0.3s;
 }
 #main {
-  transition: margin-left .5s;
+  transition: margin-right .5s;
   padding: 25%;
 }
