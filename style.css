@@ -105,9 +105,9 @@ ul.search-result {
   width: 0;
   position: fixed;
   z-index: 1;
-  height: 25%;
+  height: 100%;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -137,4 +137,8 @@ ul.search-result {
   color: #818181;
   display: block;
   transition: 0.3s;
+}
+#main {
+  transition: margin-right .5s;
+  padding: 25%;
 }
