@@ -139,6 +139,6 @@ ul.search-result {
   transition: 0.3s;
 }
 #main {
-  transition: margin-right .5s;
+  transition: margin-left .5s;
   padding: 25%;
 }
