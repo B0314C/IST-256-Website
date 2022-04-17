@@ -84,6 +84,11 @@ button {
 	color: white;
 }
 
+buttonshop {
+	background-color: transparent;
+	color: white;
+}
+
 button.search-result:hover {
 	background-color: #6FD08C;
 	color: white;
