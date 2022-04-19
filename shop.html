@@ -56,7 +56,7 @@
 		var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick='addToCart("+prodID+")'>";
 		var listOpen = "<ul class='search-result'>";
 		var listItem1 = "<li class='search-title'>" + prodTitle + "</li>";
-		var listItem2 = "<li class='search-num'>" + prodMinPrice + " - " + prodMaxPrice + "</li>";
+		var listItem2 = "<li class='search-num'>" + prodMinPrice + "</li>";
 		var listClose = "</ul>";
 		var buttonClose = "</button>";
 
@@ -115,21 +115,13 @@
 				console.log("error");
 		}
 	}
-
+// Brandon
 	function populateCart(i) {
 		//id = addedToCart
-		//var searchField = $(this).val().toLowerCase();
-		//var regExp = new RegExp(searchField);
-		$.each(products, function(i, object){
-
-			//if (regExp.test(object.ProdID)) {
-				$("div.addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
-			//}
-			});
-
-
+		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
+		//cartList.push({products[i].ProdTitle, products[i].MinProdPrice});
 	}
-
+//end Brandon
 	function populateFromSwitch(index) {
 
 		$('#A').val(products[index].ProdID);
@@ -294,14 +286,12 @@
 	<div id="CatiesCrystalCaveCart" class="sidepanel">
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a href="#">PLACEHOLDER</a>
- 		<div id="addedToCart">	</div>
-
-
+ 		<div id="addedToCart" class="sidepanel">	</div>
+		<div id="test" class="sidepanel" >	<a>Total:  </a>
+			<button align="center" type= "button" class="button2">Checkout</button>	</div>
 	<footer>
-		<bottomtotal>
-				<a>Total:  </a>
-			</bottomtotal>
-				<button type= "button" class="button2">Checkout</button>
+			<a>Total:  </a>
+				<button type="button" class="btn btn-info">Checkout</button>
 	</footer>
 
 
