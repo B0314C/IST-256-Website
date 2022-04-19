@@ -118,8 +118,10 @@
 // Brandon
 	function populateCart(i) {
 		//id = addedToCart
+
 		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
-		//cartList.push({products[i].ProdTitle, products[i].MinProdPrice});
+		cartList.push({"Listing":products[i].ProdTitle, "Price":products[i].MinProdPrice});
+		$("#addedToCart").append(cartList[0].Listing + "\n" + cartList[0].Price);
 	}
 //end Brandon
 	function populateFromSwitch(index) {
@@ -286,12 +288,10 @@
 	<div id="CatiesCrystalCaveCart" class="sidepanel">
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a href="#">PLACEHOLDER</a>
- 		<div id="addedToCart" class="sidepanel">	</div>
-		<div id="test" class="sidepanel" >	<a>Total:  </a>
-			<button align="center" type= "button" class="button2">Checkout</button>	</div>
+ 		<div id="addedToCart" class="container">	</div>
 	<footer>
 			<a>Total:  </a>
-				<button type="button" class="btn btn-info">Checkout</button>
+				<button type="button" class="btn btn-info btn-block">Checkout</button>
 	</footer>
 
 
