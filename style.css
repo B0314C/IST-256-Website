@@ -159,9 +159,16 @@ ul.search-result {
 }
 
 footer{
-height:5%;
+height:10%;
 width:100%;
 position: absolute;
 bottom:0;
 left:0;
+}
+
+.bottomtotal{
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	vertical-align: bottom;
 }
