@@ -24,6 +24,13 @@ div.gallery {
 	padding: 20px;
 }
 
+h3 {
+	font-family: "Floane", "Optima", "Calibri", sans-serif;
+	font-size: 30px;
+	color: #2C2C54;
+	line-height: 0px;
+}
+
 h2 {
 	font-family: "Floane", "Optima", "Calibri", sans-serif;
 	font-size: 40px;
@@ -87,8 +94,10 @@ button {
 .button2 {
 	background-color: #50808E;
 	color: white;
-	width: 100%;
-
+	width: 60%;
+	height: 20px;
+	bottom: auto !important;
+	border-radius: 5%;
 }
 
 button.search-result:hover {

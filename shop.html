@@ -118,6 +118,15 @@
 
 	function populateCart(i) {
 		//id = addedToCart
+		//var searchField = $(this).val().toLowerCase();
+		//var regExp = new RegExp(searchField);
+		$.each(products, function(i, object){
+
+			//if (regExp.test(object.ProdID)) {
+				$("div.addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
+			//}
+			});
+
 
 	}
 
@@ -333,7 +342,7 @@
 		<br>
 		<input type="text" class="form-control" id="search" placeholder="Search for a product">
 		<br>
-		<h3></h3>
+		<h3>Click a product to add it to your cart:</h3>
 		<div class="search-results"></div>
 
 	</div>
