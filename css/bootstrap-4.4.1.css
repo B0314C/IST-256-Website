@@ -2670,12 +2670,12 @@ fieldset:disabled a.btn {
 .btn-info {
   color: #fff;
   background-color: #50808E;
-  
+
 }
 
 .btn-info:hover {
   color: #fff;
-  background-color: #138496;
+  background-color: #6FD08C;
   border-color: #117a8b;
 }
 
