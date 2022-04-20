@@ -121,7 +121,7 @@
 
 		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
 		cartList.push({"Listing":products[i].ProdTitle, "Price":products[i].MinProdPrice});
-		$("#addedToCart").append(cartList[0].Listing + "\n" + cartList[0].Price);
+		$("#addedToCart").append(productButtons(cartList[0].Listing + "\n" + cartList[0].Price));
 	}
 //end Brandon
 	function populateFromSwitch(index) {
