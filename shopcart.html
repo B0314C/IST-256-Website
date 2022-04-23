@@ -141,22 +141,19 @@
 		cartList.push(cartItem);
 
 		$("#addedToCart").append(cartButtons(cartItem.Listing, cartItem.Price));
-
-		//Double thecartdouble = Double.parseDouble(cartItem.Price.substring(1)));
-		//	console.log(
-		console.log(Number(cartItem.Price.substring(1)));
+		//console.log(Number(cartItem.Price.substring(1)));
 		var price = Number(cartItem.Price.substring(1));
-		console.log(price);
+		//console.log(price);
 		cartTotal += price;
-		console.log(cartTotal);
+		//console.log(cartTotal);
 		$("#totalPrice").text("Total: $" + cartTotal);
 
 			toggleOpenpanel();
 	}
 
-	// function killCart(i) {
-// 	$("#killToCart").remove(cartButtons(cartList[i].Listing + cartList[i].Price));
-	// }
+	function killCart(i) {
+ 	$("#addedToCart").remove());
+	}
 	function validate() {
 		validateID();
 		titleEmpty();
