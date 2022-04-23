@@ -63,11 +63,11 @@
 		return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
 	}
 
-	function cartButtons(prodTitle, prodMinPrice) {
+	function cartButtons(prodTitle, prodPrice) {
 		var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick=''>";
 		var listOpen = "<ul class='cart'>";
 		var listItem1 = "<li class='item-title'>" + prodTitle + "</li>";
-		var listItem2 = "<li class='item-price'>" + prodMinPrice + "</li>";
+		var listItem2 = "<li class='item-price'>" + prodPrice + "</li>";
 		var listClose = "</ul>";
 		var buttonClose = "</button>";
 
@@ -84,68 +84,52 @@
 		// }
 		//
 		// }
-		console.log("outside cases: " + prodID);
+		//console.log("outside cases: " + prodID);
 		switch (prodID) {
 			case 101:
 			populateCart(0);
-			//console.log(populateCart(0));
-			console.log("in switch: " + prodID);
 			break;
 			case 102:
 			populateCart(1);
-			console.log("in switch: " + prodID);
 			break;
 			case 103:
 			populateCart(2);
-			console.log("in switch: " + prodID);
 			break;
 			case 104:
 			populateCart(3);
-			console.log("in switch: " + prodID);
 			break;
 			case 105:
 			populateCart(4);
-			console.log("in switch: " + prodID);
 			break;
 			case 106:
 			populateCart(5);
-			console.log("in switch: " + prodID);
 			break;
 			case 107:
 			populateCart(6);
-			console.log("in switch: " + prodID);
 			break;
 			case 108:
 			populateCart(7);
-			console.log("in switch: " + prodID);
 			break;
 			case 109:
 			populateCart(8);
-			console.log("in switch: " + prodID);
 			break;
 			case 110:
 			populateCart(9);
-			console.log("in switch: " + prodID);
 			break;
 			case 111:
 			populateCart(10);
-			console.log("in switch: " + prodID);
 			break;
 			case 112:
 			populateCart(11);
-			console.log("in switch: " + prodID);
 			break;
 			case 113:
 			populateCart(12);
-			console.log("in switch: " + prodID);
 			break;
 			case 114:
 			populateCart(13);
-			console.log("in switch: " + prodID);
 			break;
 			case 115:
 			populateCart(14);
-			console.log("in switch: " + prodID);
 			break;
 			default:
 			console.log("error");
@@ -153,17 +137,11 @@
 	}
 
 	function populateCart(i) {
-		//id = addedToCart
-		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.MinProdPrice));
-		console.log("can it access og array? " + products[i].ProdID);
-
-		//cartList.push({'Listing':products[i].ProdTitle, 'Price':products[i].MinProdPrice});
-
 		cartItem = {"Listing":products[i].ProdTitle,"Price":products[i].MinProdPrice};
 		cartList.push(cartItem);
-		console.log(cartList[0]);
-		//console.log(cartList[i].Listing + cartList[i].Price);
-		//$("#addedToCart").append(cartButtons(cartList[i].Listing + cartList[i].Price));
+
+		$("#addedToCart").append(cartButtons(cartItem.Listing, cartItem.Price));
+			toggleOpenpanel();
 	}
 
 	// function killCart(i) {

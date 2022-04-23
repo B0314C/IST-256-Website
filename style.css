@@ -113,8 +113,11 @@ button.search-result {
 	color: white;
 }
 
-ul.search-result {
+ul {
 	list-style-type: none;
+}
+
+ul.search-result {
 	text-align: left;
 }
 
