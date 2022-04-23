@@ -2672,6 +2672,7 @@ fieldset:disabled a.btn {
   background-color: #50808E;
   align: center;
   justify-content: center;
+  position:absolute;
 }
 
 .btn-info:hover {

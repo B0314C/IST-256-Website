@@ -152,7 +152,8 @@
 	}
 
 	function killCart(i) {
- 	$("#addedToCart").remove());
+ 	$("#addedToCart").remove();
+	cartTotal -= price;
 	}
 	function validate() {
 		validateID();
@@ -302,10 +303,10 @@
 	<div id="CatiesCrystalCaveCart" class="sidepanel">
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a><u>Cart</u></a>
-		<div id="addedToCart" class="container" >	</div>
+		<div id="addedToCart" class="container">	</div>
 		<div id="thefooter" class= "container">	</div>
 		<a id="totalPrice">Total: </a>
-				<button type="button" id="checkout" class="btn btn-block search-result">Checkout</button>
+				<button type="button" id="checkout" class="btn btn-block search-result ">Checkout</button>
 
 
 	</div>

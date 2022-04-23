@@ -184,3 +184,6 @@ footer{
 	margin:auto;
 	width:100%;
 }
+.slaybuttons{
+	onclick="killCart()"
+}
