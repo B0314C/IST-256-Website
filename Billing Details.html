@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!--Brandon-->
+	<script> function Validate(){
+			validateAge();
+			validateAddress();
+			storeInput();
+		}
+		function validateAge(){
+			var ageInput = String(document.getElementById('age').value);
+			try{
+				if(ageInput <= 0) throw "Age must be above 0";
+				if(ageInput > 120) throw "Age must be below 120";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+
+		  function validateAddress(){
+			var addressInput = String(document.getElementById('adrs').value);
+			try{
+				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
+			}
+			catch(err){
+				alert(err);
+			}
+			}
+
+		  function storeInput(){
+			var emailInput = String(document.getElementById('eml').value);
+			var addressInput = String(document.getElementById('adrs').value);
+			var nameInput = String(document.getElementById('nme').value);
+			var phoneInput = String(document.getElementById('phnum').value);
+			var ageInput = String(document.getElementById('age').value);
+			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
+			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
+		  }
+</script>
+	<!--Catie-->
+	<div class="container">
+
+        <div class="row">
+			<div class="col-sm-7">
+				<h1 class="display-3">Catie's Crystal Cave</h1>
+			</div>
+
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/search-icon-png-9969.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/cart-icon-28356.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="images/Instagram-logo-transparent-PNG.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="images/logo-facebookpng-32204.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="images/clipart3654626.png"></a>
+            </div>
+        </div>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<p>A (very) small tumbling business in York, PA</p>
+			</div>
+			<div class="col-sm-7 menu-row">
+                <a href="index.html" class="menu edge">Contact Us</a>
+                <a href="index.html" class="menu">About Us</a>
+                <a href="ShopperManagementHTML.html" class="menu">Account</a>
+                <a href="index.html" class="menu">Shop</a>
+				<a href="index.html" class="menu">Home</a>
+            </div>
+		</div>
+
+	</div>
+
+	<br><br><br>
+
+<!--Josh-->
+<form name="accountcrubmit=">
+  <div class="col-lg-6 offset-lg-3 gallery">
+	  <h2 align="center">Billing Details</h2>
+	  <br>
+
+	  <label style="color: #A40E4C" for="Customer Name">Card Holder Name</label>
+    <input  type="text" class="form-control" name="customerName" placeholder="Customer Name" id="nme" required>
+	  <br>
+
+   	 <label style="color: #A40E4C" for="Phone Number">Billing address</label>
+    <input  type="tel" class="form-control" name="billingAddress" placeholder="Enter card holder address" id="billingAddress">
+	  <br>
+
+	  <label style="color: #A40E4C" for="exampleInputEmail1">Credit Card</label>
+    <input type="email" class="form-control" name="InputEmail" placeholder="Credit Card Number" id="creditCardNumber" >
+		<br>
+<a href="shopcart.html">
+		<div class=" gallery leftalignbutton ">
+		   <input style=" color: #A40E4C" type="button" value="Shopping Cart" align="center" onClick="Validate()">
+		 </a>
+		</div>
+
+
+		<div class=" gallery rightalignbutton ">
+			<a href="Shipping Details.html">
+		    	<input  style=" color: #A40E4C" type="button" value="Shipping Details" align="center" href="shipping Details" >
+				</a>
+		</div>
+<br><br>
+  </div>
+
+</form>
+
+</body>
+</html>

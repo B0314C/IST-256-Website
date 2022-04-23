@@ -187,3 +187,12 @@ footer{
 .slaybuttons{
 	onclick="killCart()"
 }
+
+.rightalignbutton{
+float: right;
+display: inline-block;
+}
+.leftalignbutton{
+float: left;
+display: inline-block;
+}
