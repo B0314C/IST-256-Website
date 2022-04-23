@@ -100,25 +100,27 @@
     <input  type="text" class="form-control" name="customername" placeholder="Shipping Address" id="shippingAddress" required>
 	  <br>
 
-   	 <label style="color: #A40E4C" for="Phone Number">Choose Shipping Carrier</label>
-    <input  type="text" class="form-control" name="Phone Number"  placeholder="Phone Number in xxx-xxx-xxxx format" id="phnum">
+   	 <label style="color: #A40E4C" for="shippingCarrier">Choose Shipping Carrier</label>
+    <input  type="text" class="form-control" name="theShippingCarrier"  placeholder="Phone Number in xxx-xxx-xxxx format" id="theIDShippingCarrier">
 	  <br>
 
-	  <label style="color: #A40E4C" for="exampleInputEmail1">Email Address</label>
-    <input type="email" class="form-control" name="InputEmail"  placeholder="Email" id="eml" >
+	  <label style="color: #A40E4C" for="theShippingMethod">Shipping Method</label>
+    <input type="email" class="form-control" name="theShippingMethod"  placeholder="Method" id="theVeryShippingMethod" >
 	  <br>
 
-		<label style="color: #A40E4C" for="Customer Age">Customer Age</label>
-    <input  type="text" class="form-control" name="TheCustomerAge" placeholder="Age" id="age" required>
-	  <br>
+		<a href="Billing Details.html">
+				<div class="gallery leftalignbutton">
+				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" onClick="Validate()">
+				 </a>
 
-        <label style="color: #A40E4C" for="The Address">Address</label>
-	   <input  type="text" class="form-control" name="TheAddress" placeholder="Address format as Street Address, City, State, Zip Code" id="adrs" required>
-	  <br>
+				</div>
 
-    <input style=" color: #A40E4C" type="button" value="Save Changes" align="center" onClick="Validate()">
-  </div>
-	<br>
+				<div class=" gallery rightalignbutton ">
+					<a href="Order Complete.html">
+				    	<input style=" color: #A40E4C" type="button" value="Submit Order" align="center" href="shipping Details" >
+						</a>
+				</div>
+		<br><br>
 
 </form>
 
