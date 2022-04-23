@@ -52,7 +52,7 @@
 		});
 	}
 
-	function productButtons(prodTitle, prodID, prodMinPrice, prodMaxPrice) {
+	function productButtons(prodTitle, prodID, prodMinPrice) {
 		var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick='addToCart("+prodID+")'>";
 		var listOpen = "<ul class='search-result'>";
 		var listItem1 = "<li class='search-title'>" + prodTitle + "</li>";
@@ -63,51 +63,70 @@
 		return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
 	}
 
+	function cartButtons(prodTitle, prodMinPrice) {
+		var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick=''>";
+		var listOpen = "<ul class='cart'>";
+		var listItem1 = "<li class='item-title'>" + prodTitle + "</li>";
+		var listItem2 = "<li class='item-price'>" + prodMinPrice + "</li>";
+		var listClose = "</ul>";
+		var buttonClose = "</button>";
+
+		return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
+	}
+
 	function addToCart(prodID) {
 		//$("button.search-result").remove();
+		// for (var indek = 0; indek < products.length; indek++){
+		// 	if(productID == products[indek].ProdID){
+		// 		console.log("prodID: " + productID);
+		// 		console.log("products[indek].ProdID: " + products.ProdID)
+		// 	populateCart(indek);
+		// }
+		// 
+		// }
 		switch (prodID) {
 			case 101:
 				populateCart(0);
-				break;
+
 			case 102:
 				populateCart(1);
-				break;
+
 			case 103:
 				populateCart(2);
-				break;
+
 			case 104:
 				populateCart(3);
-				break;
+
 			case 105:
 				populateCart(4);
-				break;
+
 			case 106:
 				populateCart(5);
-				break;
+
 			case 107:
 				populateCart(6);
-				break;
+
 			case 108:
 				populateCart(7);
-				break;
+
 			case 109:
 				populateCart(8);
-				break;
+
 			case 110:
 				populateCart(9);
-				break;
+
 			case 111:
 				populateCart(10);
-				break;
+
 			case 112:
 				populateCart(11);
-				break;
+
 			case 113:
 				populateCart(12);
-				break;
+
 			case 114:
 				populateCart(13);
-				break;
+
 			case 115:
 				populateCart(14);
 				break;
@@ -120,8 +139,15 @@
 		//id = addedToCart
 
 		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
+
 		cartList.push({"Listing":products[i].ProdTitle, "Price":products[i].MinProdPrice});
-		$("#addedToCart").append(productButtons(cartList[0].Listing + "\n" + cartList[0].Price));
+		console.log(cartList[i].Listing + cartList[i].Price);
+		$("#addedToCart").append(cartButtons(cartList[i].Listing + cartList[i].Price));
+	}
+
+	function killCart(i) {
+
+		$("#killToCart").remove(cartButtons(cartList[i].Listing + cartList[i].Price));
 	}
 //end Brandon
 	function populateFromSwitch(index) {
