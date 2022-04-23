@@ -33,6 +33,7 @@
 
 	var cartList = [];
 	var cartTotal = 0.0;
+	var cartButtonCount = 0;
 
 	$(document).ready(search);
 
@@ -59,18 +60,18 @@
 		var listItem2 = "<li class='search-num'>" + prodMinPrice + "</li>";
 		var listClose = "</ul>";
 		var buttonClose = "</button>";
-
 		return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
 	}
 
 	function cartButtons(prodTitle, prodPrice) {
-		var buttonOpen = "<button type='button' class='btn btn-block search-result' onclick=''>";
+		var buttonOpen = "<button type='button' id='" + cartButtonCount + "' class='btn btn-block search-result' onclick='killCart(" + cartButtonCount + ")'>";
 		var listOpen = "<ul class='cart'>";
 		var listItem1 = "<li class='item-title'>" + prodTitle + "</li>";
 		var listItem2 = "<li class='item-price'>" + prodPrice + "</li>";
 		var listClose = "</ul>";
 		var buttonClose = "</button>";
-
+		//console.log("cartButtons(): " + cartButtonCount);
+		cartButtonCount++;
 		return buttonOpen + listOpen + listItem1 + listItem2 + listClose + buttonClose;
 	}
 
@@ -141,147 +142,25 @@
 		cartList.push(cartItem);
 
 		$("#addedToCart").append(cartButtons(cartItem.Listing, cartItem.Price));
-		//console.log(Number(cartItem.Price.substring(1)));
 		var price = Number(cartItem.Price.substring(1));
-		//console.log(price);
 		cartTotal += price;
-		//console.log(cartTotal);
-		$("#totalPrice").text("Total: $" + cartTotal);
+		$("#totalPrice").text("Total: $" + cartTotal.toFixed(2));
 
-			toggleOpenpanel();
+		toggleOpenpanel();
 	}
 
 	function killCart(i) {
- 	$("#addedToCart").remove();
-	cartTotal -= price;
-	}
-	function validate() {
-		validateID();
-		titleEmpty();
-		descriptionEmpty();
-		validateCateg();
-		validateUnit();
-		validatePrices();
-	}
-	function validateUnit() {  //this is the validation of the first name not being empty.
-		var x = document.getElementById('E').value.toLowerCase();
-		if (x != "1 stone" ) {
-			alert("Unit Of Measure Must Be 1 Stone");
-			return false;
-		}
-
-	}
-	function titleEmpty() {
-		var x = document.getElementById('B').value;
-		if (x.length == 0) {
-			alert("Title must contain value");
-			return false;
-		}
-	}
-	function descriptionEmpty() {
-		var y = document.getElementById('C').value;
-		if (y.length == 0) {
-			alert("Description must contain value");
-			return false;
-		}
-	}
-	function validateID() {  //this is the validation of the ID having exactly 3 characters
-		var x = document.getElementById('A').value.length;
-		if (x != 3) {
-			alert("ID must be 3 character long");
-			return false;
-		}
-	}
-	function validateCateg() { //this is validation of the last name not being empty
-		var x = document.getElementById('D').value.toLowerCase();
-		if(x != "rough" && x!= "tumbled"){
-			alert("Must be either rough or tumbled");
-			return false;
-		}
-	}
-	function validatePrices() { //this is validation of the last name not being empty
-		var x = document.getElementById('F').value;
-		if(!x.startsWith("$")){
-			alert("Please enter minimum value in $X.XX format");
-			return false;
-		}
-		var y = document.getElementById('G').value;
-		if(!y.startsWith("$")){
-			alert("Please enter maximum value in $X.XX format");
-			return false;
-		}
-	}
-	function saveChanges(){
-		var ProductID = String(document.getElementById('A').value);
-		console.log(ProductID);
-		var Title = String(document.getElementById('B').value);
-		var Desc = String(document.getElementById('C').value);
-		var Cate = String(document.getElementById('D').value);
-		var Measure = String(document.getElementById('E').value);
-		var MinPrice = String(document.getElementById('F').value);
-		var MaxPrice = String(document.getElementById('G').value);
-
-		// var thearray = {"Inputs":[{"ID":ProductID, "Name":Title, "Description":Desc, "Category":Cate, "Measure":Measure, "MinPrice":MinPrice, "MaxPrice":MaxPrice}]};
-		for(var i=0; i < products.length; i++){
-			if(products[i].ProdID == ProductID)
-			{
-				console.log("ProductID Matches " + products[i].ProdID);
-				products[i].ProdID = ProductID;
-				products[i].ProdTitle = Title;
-				products[i].ProdDescription = Desc;
-				products[i].ProdCateg = Cate;
-				products[i].UnitOfMeasures = Measure;
-				products[i].MinProdPrice = MinPrice;
-				products[i].MaxProdPrice = MaxPrice;
-			}
-			else {
-				products.push({"ProdID":ProductID,"ProdTitle":Title,"ProdDescription":Desc,"ProdCateg":Cate,"UnitOfMeasures":Measure,"MinProdPrice":MinPrice,"MaxProdPrice":MaxPrice});
-				// products[products.length].ProdID = ProductID;
-				// products[products.length].ProdTitle = Title;
-				// products[products.length].ProdDescription = Desc;
-				// products[products.length].ProdCateg = Cate;
-				// products[products.length].UnitOfMeasures = Measure;
-				// products[products.length].MinProdPrice = MinPrice;
-				// products[products.length].MaxProdPrice = MaxPrice;
-				break;
-			}
-
-
-		}
-
-		alert("All Changes Saved");
-		$("buttonPress").keydown(function(){
-			var products = [];
-			console.log(products);
-			$.each(data, function(ProductID){
-				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-				products.push();
-				console.log(ProductID + Title + Desc + Cate + Measure + MinPrice + MaxPrice);
-			});
-		});
-	}
-	function buttonPress(){
-		Validate();
-		saveChanges();
-
+		$("#" + i + "").remove();
+		var price = Number(cartList[i].Price.substring(1));
+		cartTotal -= price;
+		$("#totalPrice").text("Total: $" + cartTotal.toFixed(2));
 	}
 
 	function shoppingcart(){
-		if (cartIsEmpty()) {
-			// output that cart is empty
-			toggleOpenpanel(); // REMEMBER TO TAKE THIS OUT ONCE CART IS FUNCTIONAL
-		}
-		else {
-			toggleOpenpanel();
-		}
-	}
-
-	function cartIsEmpty(){
+		toggleOpenpanel();
 		if (cartList.length == 0) {
-			return true;
-		}
-		else {
-			return false;
+			// output that cart is empty
+			$("#totalPrice").text("Total: $0.00");
 		}
 	}
 
@@ -304,9 +183,10 @@
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a><u>Cart</u></a>
 		<div id="addedToCart" class="container">	</div>
-		<div id="thefooter" class= "container">	</div>
+		<!-- <div id="thefooter" class= "container">	</div> -->
+
 		<a id="totalPrice">Total: </a>
-				<button type="button" id="checkout" class="btn btn-block search-result ">Checkout</button>
+		<button type="button" id="checkout" class="btn btn-block search-result ">Checkout</button>
 
 
 	</div>
