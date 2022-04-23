@@ -32,7 +32,7 @@
 	{"ProdID":115,"ProdTitle":"Tumbled Pink Rose Quartz Stones Healing Crystals","ProdImage":"images/rose-quartz.jpg","ProdDescription":"These tumbled rose quartz stones are so shiny! I tumble them myself without using any coating to make them shiny. Each one has a gorgeous blush pink color and natural striations\n\nThey come in three sizes (measured on longest side):\nSmall: About 1\"\nMedium: 1\" to 1.5\"Large: 1.5\" to 2\"\n\nMetaphysical Properties: promotes love (including self-love, friendship, and romantic love), inner healing, trust, and inner peace and comforts grief.\n\nAll orders ship in a compostable bubble mailer or recycled padded mailer with a small, purple, mesh, drawstring bag and a thank you note made from recycled paper.","ProdCateg":"Tumbled","UnitOfMeasures":"1 Stone","MinProdPrice":"$2.00","MaxProdPrice":"$3.50"}];
 
 	var cartList = [];
-
+	var cartTotal = 0.0;
 
 	$(document).ready(search);
 
@@ -141,6 +141,16 @@
 		cartList.push(cartItem);
 
 		$("#addedToCart").append(cartButtons(cartItem.Listing, cartItem.Price));
+
+		//Double thecartdouble = Double.parseDouble(cartItem.Price.substring(1)));
+		//	console.log(
+		console.log(Number(cartItem.Price.substring(1)));
+		var price = Number(cartItem.Price.substring(1));
+		console.log(price);
+		cartTotal += price;
+		console.log(cartTotal);
+		$("#totalPrice").text("Total: $" + cartTotal);
+
 			toggleOpenpanel();
 	}
 
@@ -191,7 +201,6 @@
 			return false;
 		}
 	}
-
 	function validatePrices() { //this is validation of the last name not being empty
 		var x = document.getElementById('F').value;
 		if(!x.startsWith("$")){
@@ -204,7 +213,6 @@
 			return false;
 		}
 	}
-
 	function saveChanges(){
 		var ProductID = String(document.getElementById('A').value);
 		console.log(ProductID);
@@ -298,9 +306,11 @@
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a><u>Cart</u></a>
 		<div id="addedToCart" class="container" >	</div>
-		<div id="thefooter" class= "container"> </div>
-		<a>Total:  </a>
-		<button type="button" class="btn btn-info">Checkout</button>
+		<div id="thefooter" class= "container">	</div>
+		<a id="totalPrice">Total: </a>
+				<button type="button" id="checkout" class="btn btn-block search-result">Checkout</button>
+
+
 	</div>
 
 	<!--Catie-->
