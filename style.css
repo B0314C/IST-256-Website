@@ -88,6 +88,8 @@ form {
 
 button {
 	background-color: #50808E;
+	justify-content: center;
+	align: center;
 	color: white;
 }
 /* #50808E */
