@@ -33,7 +33,7 @@
 
 	var cartList = [];
 
-	//Catie
+
 	$(document).ready(search);
 
 	// Searches products
@@ -82,87 +82,93 @@
 		// 		console.log("products[indek].ProdID: " + products.ProdID)
 		// 	populateCart(indek);
 		// }
-		// 
+		//
 		// }
+		console.log("outside cases: " + prodID);
 		switch (prodID) {
 			case 101:
-				populateCart(0);
-
+			populateCart(0);
+			//console.log(populateCart(0));
+			console.log("in switch: " + prodID);
+			break;
 			case 102:
-				populateCart(1);
-
+			populateCart(1);
+			console.log("in switch: " + prodID);
+			break;
 			case 103:
-				populateCart(2);
-
+			populateCart(2);
+			console.log("in switch: " + prodID);
+			break;
 			case 104:
-				populateCart(3);
-
+			populateCart(3);
+			console.log("in switch: " + prodID);
+			break;
 			case 105:
-				populateCart(4);
-
+			populateCart(4);
+			console.log("in switch: " + prodID);
+			break;
 			case 106:
-				populateCart(5);
-
+			populateCart(5);
+			console.log("in switch: " + prodID);
+			break;
 			case 107:
-				populateCart(6);
-
+			populateCart(6);
+			console.log("in switch: " + prodID);
+			break;
 			case 108:
-				populateCart(7);
-
+			populateCart(7);
+			console.log("in switch: " + prodID);
+			break;
 			case 109:
-				populateCart(8);
-
+			populateCart(8);
+			console.log("in switch: " + prodID);
+			break;
 			case 110:
-				populateCart(9);
-
+			populateCart(9);
+			console.log("in switch: " + prodID);
+			break;
 			case 111:
-				populateCart(10);
-
+			populateCart(10);
+			console.log("in switch: " + prodID);
+			break;
 			case 112:
-				populateCart(11);
-
+			populateCart(11);
+			console.log("in switch: " + prodID);
+			break;
 			case 113:
-				populateCart(12);
-
+			populateCart(12);
+			console.log("in switch: " + prodID);
+			break;
 			case 114:
-				populateCart(13);
-
+			populateCart(13);
+			console.log("in switch: " + prodID);
+			break;
 			case 115:
-				populateCart(14);
-				break;
+			populateCart(14);
+			console.log("in switch: " + prodID);
+			break;
 			default:
-				console.log("error");
+			console.log("error");
 		}
 	}
-// Brandon
+
 	function populateCart(i) {
 		//id = addedToCart
+		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.MinProdPrice));
+		console.log("can it access og array? " + products[i].ProdID);
 
-		//$("div#addedToCart").append(productButtons(object.ProdTitle, object.ProdID, object.MinProdPrice, object.MaxProdPrice));
+		//cartList.push({'Listing':products[i].ProdTitle, 'Price':products[i].MinProdPrice});
 
-		cartList.push({"Listing":products[i].ProdTitle, "Price":products[i].MinProdPrice});
-		console.log(cartList[i].Listing + cartList[i].Price);
-		$("#addedToCart").append(cartButtons(cartList[i].Listing + cartList[i].Price));
+		cartItem = {"Listing":products[i].ProdTitle,"Price":products[i].MinProdPrice};
+		cartList.push(cartItem);
+		console.log(cartList[0]);
+		//console.log(cartList[i].Listing + cartList[i].Price);
+		//$("#addedToCart").append(cartButtons(cartList[i].Listing + cartList[i].Price));
 	}
 
-	function killCart(i) {
-
-		$("#killToCart").remove(cartButtons(cartList[i].Listing + cartList[i].Price));
-	}
-//end Brandon
-	function populateFromSwitch(index) {
-
-		$('#A').val(products[index].ProdID);
-		$('#B').val(products[index].ProdTitle);
-		$('#C').val(products[index].ProdDescription);
-		$('#D').val(products[index].ProdCateg);
-		$('#E').val(products[index].UnitOfMeasures);
-		$('#F').val(products[index].MinProdPrice);
-		$('#G').val(products[index].MaxProdPrice);
-	}
-	//End Catie
-
-	//Josh
+	// function killCart(i) {
+// 	$("#killToCart").remove(cartButtons(cartList[i].Listing + cartList[i].Price));
+	// }
 	function validate() {
 		validateID();
 		titleEmpty();
@@ -207,7 +213,7 @@
 			return false;
 		}
 	}
-	//Brandon
+
 	function validatePrices() { //this is validation of the last name not being empty
 		var x = document.getElementById('F').value;
 		if(!x.startsWith("$")){
@@ -220,7 +226,6 @@
 			return false;
 		}
 	}
-	//end Josh
 
 	function saveChanges(){
 		var ProductID = String(document.getElementById('A').value);
@@ -276,7 +281,7 @@
 		saveChanges();
 
 	}
-	//End Brandon
+
 	function shoppingcart(){
 		if (cartIsEmpty()) {
 			// output that cart is empty
@@ -314,10 +319,10 @@
 	<div id="CatiesCrystalCaveCart" class="sidepanel">
 		<a href="javascript:void(0)" class="closebtn" onclick="toggleCartClose()">×</a>
 		<a><u>Cart</u></a>
- 		<div id="addedToCart" class="container" >	</div>
+		<div id="addedToCart" class="container" >	</div>
 		<div id="thefooter" class container"> </div>
 		<a>Total:  </a>
-			<button type="button" class="btn btn-info btn-block">Checkout</button>
+		<button type="button" class="btn btn-info btn-block">Checkout</button>
 	</div>
 
 	<!--Catie-->
