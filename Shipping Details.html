@@ -12,42 +12,7 @@
 
 <body>
 	<!--Brandon-->
-	<script> function Validate(){
-			validateAge();
-			validateAddress();
-			storeInput();
-		}
-		function validateAge(){
-			var ageInput = String(document.getElementById('age').value);
-			try{
-				if(ageInput <= 0) throw "Age must be above 0";
-				if(ageInput > 120) throw "Age must be below 120";
-			}
-			catch(err){
-				alert(err);
-			}
-			}
 
-		  function validateAddress(){
-			var addressInput = String(document.getElementById('adrs').value);
-			try{
-				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
-			}
-			catch(err){
-				alert(err);
-			}
-			}
-
-		  function storeInput(){
-			var emailInput = String(document.getElementById('eml').value);
-			var addressInput = String(document.getElementById('adrs').value);
-			var nameInput = String(document.getElementById('nme').value);
-			var phoneInput = String(document.getElementById('phnum').value);
-			var ageInput = String(document.getElementById('age').value);
-			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
-			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
-		  }
-</script>
 	<!--Catie-->
 	<div class="container">
 
@@ -97,20 +62,28 @@
 	  <br>
 
 	  <label style="color: #A40E4C" for="Customer Name">Shipping Destination</label>
-    <input  type="text" class="form-control" name="customername" placeholder="Shipping Address" id="shippingAddress" required>
+    <input  type="text" class="form-control" name="theshippingaddress" placeholder="Shipping Address" id="shippingAddress"  minlength="5" maxlength="46" >
 	  <br>
 
    	 <label style="color: #A40E4C" for="shippingCarrier">Choose Shipping Carrier</label>
-    <input  type="text" class="form-control" name="theShippingCarrier"  placeholder="Phone Number in xxx-xxx-xxxx format" id="theIDShippingCarrier">
+    <Select class="form-control" name="theShippingCarrier"  placeholder="Choose Carrier" id="theIDShippingCarrier" required>
+			<option value=null></option>
+					<option value="USPS">USPS</option>
+		</Select>
 	  <br>
 
 	  <label style="color: #A40E4C" for="theShippingMethod">Shipping Method</label>
-    <input type="email" class="form-control" name="theShippingMethod"  placeholder="Method" id="theVeryShippingMethod" >
-	  <br>
+    <Select type="email" class="form-control" name="theShippingMethod"  placeholder="Method" id="theVeryShippingMethod" required>
+<option value=null></option>
+					<option value="First Class">First Class: $3.37.....................3-4 business days</option>
+			       <option value="Priority">Priority: $7.37.........................1-3 business days</option>
+		 <option value="Priority Express">Priority Express: $23.50..........1-2 business days</option>
+		</Select>
+		<br>
 
 		<a href="Billing Details.html">
 				<div class="gallery leftalignbutton">
-				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" onClick="Validate()">
+				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" onClick=Validate()>
 				 </a>
 
 				</div>
