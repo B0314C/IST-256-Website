@@ -91,6 +91,7 @@ button {
 	justify-content: center;
 	align: center;
 	color: white;
+	margin: 0px;
 }
 /* #50808E */
 .button2 {
@@ -142,6 +143,7 @@ ul.search-result {
   background-color: transparent;
   color: transparent;
   border: none;
+	float: right;
 }
 
 .closebtn {
