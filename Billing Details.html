@@ -8,29 +8,53 @@
 <title>Home</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+
 </head>
 
-<body>
-	<!--Brandon-->
-	<script> function Validate(){
-	
-			validateAddress();
+	<body>
+		<!--Brandon-->
+		<script>
+		function Validate(){
 
-		}
+				validateAddress();
+				validateNamelength();
+				Creditcard();
+				CreditcardCVC();
 
-
-		  function validateAddress(){
-			var addressInput = String(document.getElementById('adrs').value);
-			try{
-				if(addressInput.length > 46) throw "Address cannot be more than 46 characters long";
-			}
-			catch(err){
-				alert(err);
-			}
 			}
 
+				function validateAddress(){
+						var x = document.getElementById('billingAddress').value;
 
-</script>
+						if (x.length > 46 || x.length < 6) {
+							alert("Address must contain value between 6 & 46 characters");
+							return false;
+						}
+					}
+					function validateNamelength(){
+							var x = document.getElementById('nme').value;
+
+							if (x.length == 0) {
+								alert("Cardholder name must contain value");
+								return false;
+							}
+						}
+						function Creditcard(){
+								var x = document.getElementById('creditCardNumber').value;
+								if (x.length > 16 || x.length < 9) {
+									alert("Crecit Card must be between 9-16 characters");
+									return false;
+								}
+							}
+							function CreditcardCVC(){
+									var x = document.getElementById('creditCardNumberVerification').value;
+									if (x.length > 3 || x.length < 3) {
+										alert("Crecit Card CVC must be 3 characters");
+										return false;
+									}
+								}
+
+				</script>
 	<!--Catie-->
 	<div class="container">
 
@@ -74,7 +98,7 @@
 	<br><br><br>
 
 <!--Josh-->
-<form name="accountcrubmit=">
+<form name="accountcrubmit=" onsubmit="return Validate()" method="post">
   <div class="col-lg-6 offset-lg-3 gallery">
 	  <h2 align="center">Billing Details</h2>
 	  <br>
@@ -84,26 +108,26 @@
 	  <br>
 
    	 <label style="color: #A40E4C" for="BillingtheAddress">Billing address</label>
-    <input  type="tel" class="form-control" name="billingAndAddress" placeholder="Enter Card Holder Address" id="billingAddress">
+    <input  type="text" class="form-control" name="billingAndAddress" placeholder="Enter Card Holder Address" id="billingAddress" required>
 	  <br>
 
 	  <label style="color: #A40E4C" for="theCreditCard">Credit Card</label>
-    <input type="email" class="form-control" name="creditTheCard" placeholder="Credit Card Number" id="creditCardNumber" >
+    <input type="text" class="form-control" name="creditTheCard" placeholder="Credit Card Number" id="creditCardNumber" pattern="[0-9]{13,16}"required>
 		<br>
 
 		<label style="color: #A40E4C" for="theCreditCardVerification">CVV</label>
-    <input type="email" class="form-control" name="creditTheCardVerification" placeholder="Credit Card Number" id="creditCardNumberVerification" >
+    <input type="text" class="form-control" name="creditTheCardVerification" placeholder="Credit Card Number" id="creditCardNumberVerification" required>
 		<br>
 <a href="shop.html">
 		<div class="gallery leftalignbutton">
-		   <input style=" color: #A40E4C" type="button" value="Shopping Cart" align="center" onClick="Validate()">
+		   <input style=" color: #A40E4C" type="button" value="Shopping Cart" align="center" >
 		 </a>
 
 		</div>
 
 		<div class=" gallery rightalignbutton ">
 			<a href="Shipping Details.html">
-		    	<input style=" color: #A40E4C" type="button" value="Shipping Details" align="center" href="shipping Details" >
+		    	<input style=" color: #A40E4C" type="button" value="Shipping Details" align="center" href="shipping Details" onmouseover=" Validate()" onclick="Shipping Details.html">
 				</a>
 		</div>
 <br><br>
