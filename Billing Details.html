@@ -13,20 +13,11 @@
 <body>
 	<!--Brandon-->
 	<script> function Validate(){
-			validateAge();
+	
 			validateAddress();
-			storeInput();
+
 		}
-		function validateAge(){
-			var ageInput = String(document.getElementById('age').value);
-			try{
-				if(ageInput <= 0) throw "Age must be above 0";
-				if(ageInput > 120) throw "Age must be below 120";
-			}
-			catch(err){
-				alert(err);
-			}
-			}
+
 
 		  function validateAddress(){
 			var addressInput = String(document.getElementById('adrs').value);
@@ -38,15 +29,7 @@
 			}
 			}
 
-		  function storeInput(){
-			var emailInput = String(document.getElementById('eml').value);
-			var addressInput = String(document.getElementById('adrs').value);
-			var nameInput = String(document.getElementById('nme').value);
-			var phoneInput = String(document.getElementById('phnum').value);
-			var ageInput = String(document.getElementById('age').value);
-			var JSON = {"Test":[{"Email":emailInput, "Name":nameInput, "Address":addressInput, "Age":ageInput, "Phone":phoneInput}]};
-			alert("Email: "+JSON.Test[0].Email +" "+ "Name: "+JSON.Test[0].Name +" "+ "Address: "+JSON.Test[0].Address +" "+ "Age: "+JSON.Test[0].Age +" "+ "Phone Number: "+JSON.Test[0].Phone);
-		  }
+
 </script>
 	<!--Catie-->
 	<div class="container">
@@ -97,7 +80,7 @@
 	  <br>
 
 	  <label style="color: #A40E4C" for="Customer Name">Card Holder Name</label>
-    <input  type="text" class="form-control" name="customerName" placeholder="Customer Name" id="nme" required>
+    <input  type="text" class="form-control" name="customerName" placeholder="Name Of Cardholder" id="nme" required>
 	  <br>
 
    	 <label style="color: #A40E4C" for="BillingtheAddress">Billing address</label>

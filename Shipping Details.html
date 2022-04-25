@@ -8,11 +8,28 @@
 <title>Home</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
 	<!--Brandon-->
+	<script>
+	function Validate(){
+	alert("validate is working");
+			validateAddress();
 
+		}
+
+			function validateAddress(){
+					var x = document.getElementById('IDofshippingAddress').value;
+					alert(x);
+					if (x.length == 0) {
+						alert("Address must contain value");
+						return false;
+					}
+				}
+
+			</script>
 	<!--Catie-->
 	<div class="container">
 
@@ -56,13 +73,13 @@
 	<br><br><br>
 
 <!--Josh-->
-<form name="accountcrubmit=">
+<form name="shippingdetailsform" >
   <div class="col-lg-6 offset-lg-3 gallery">
 	  <h2 align="center">Shipping Details</h2>
 	  <br>
 
 	  <label style="color: #A40E4C" for="Customer Name">Shipping Destination</label>
-    <input  type="text" class="form-control" name="theshippingaddress" placeholder="Shipping Address" id="shippingAddress"  minlength="5" maxlength="46" >
+    <input  type="text" class="form-control" name="theshippingaddress" placeholder="Shipping Address" id="IDofshippingAddress"  >
 	  <br>
 
    	 <label style="color: #A40E4C" for="shippingCarrier">Choose Shipping Carrier</label>
@@ -83,14 +100,15 @@
 
 		<a href="Billing Details.html">
 				<div class="gallery leftalignbutton">
-				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" onmouseover="Validate()">
+
+				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" >
 				 </a>
 
 				</div>
 
-				<div class=" gallery rightalignbutton ">
-					<a href="Order Complete.html">
-				    	<input style=" color: #A40E4C" type="button" value="Submit Order" align="center" href="shipping Details" >
+				<div class=" gallery rightalignbutton " >
+					<a  href="Order Complete.html">
+				    	<input style=" color: #A40E4C" type="button" value="Submit Order" align="center" onmouseover="validate()"  >
 						</a>
 				</div>
 		<br><br>
