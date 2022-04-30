@@ -5,33 +5,53 @@
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<meta http-equiv="x-ua-compatible" content="ie=edge">
-  	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/bootstrap-4.4.1.css">
 	<link rel="stylesheet" href="style.css">
   	<title>Create An Account</title>
 </head>
 <body>
-	
-	<a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="../images/clipart3654626.png"></a>
-	<a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="../images/logo-facebookpng-32204.png"></a>
-	<a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="../images/Instagram-logo-transparent-PNG.png"></a>
-	<img class="icon" src="../images/Account Icon.png">
-	<img class="icon" src="../images/cart-icon-28356.png">
-	<img class="icon" src="../images/search-icon-png-9969.png">
-	
-	<h1>Catie's Crystal Cave</h1>
-	<p>A (very) small rock tumbling business in York, PA</p>
-	<a href="contact.html" class="menu edge">Contact</a>
-	<a href="about.html" class="menu">About</a>
-	<a href="shop.html" class="menu">Shop</a>
-	<a href="index.html" class="menu">Home</a>
-	
+
+  <div class="container">
+    <div class="row">
+			<div class="col-sm-7">
+				<h1 class="display-3">Catie's Crystal Cave</h1>
+			</div>
+			<div class="col-sm-1">
+				<a href="shop.html"><img class="icon" src="images/search-icon-png-9969.png"></a>
+			</div>
+			<div class="col-sm-1">
+				<a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="images/Instagram-logo-transparent-PNG.png"></a>
+			</div>
+			<div class="col-sm-1">
+				<a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="images/logo-facebookpng-32204.png"></a>
+			</div>
+			<div class="col-sm-1">
+				<a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="images/clipart3654626.png"></a>
+			</div>
+			<div class="col-sm-1">
+				<a><img class="icon" src="images/cart-icon-28356.png"></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<p>A (very) small tumbling business in York, PA</p>
+			</div>
+			<div class="col-sm-7 menu-row">
+				<a href="index.html" class="menu edge">Contact Us</a>
+				<a href="index.html" class="menu">About Us</a>
+				<a href="account-management.html" class="menu">Account</a>
+				<a href="shop.html" class="menu">Shop</a>
+				<a href="index.html" class="menu">Home</a>
+			</div>
+		</div>
+	</div>
 	<br><br><br>
-	
+
 <div class="container">
-	
+
 	<h2>Create an Account</h2>
 	<br><br>
-	
+
     <form onsubmit="validateInput(); return false;">
 		<div class="form-group">
 			<label>First Name: </label>
@@ -70,7 +90,7 @@
 		var fieldFeedback;
 		var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var jsonObj = {"firstName":null, "lastName":null, "emailAddress":null, "password":null, "passConfirm":null};
-		
+
 		if (fname == "") {
 			document.getElementById("fname-feedback").innerHTML = "Please enter your first name.";
 			fieldFeedback = document.getElementById("fname");
@@ -131,18 +151,18 @@
 			fieldFeedback.style.border = "3px solid green";
 			fieldFeedback.blur();
 			jsonObj.passConfirm = repwd;
-		} 
-		
+		}
+
 		window.alert("First Name: " + jsonObj.firstName + "\n" +
 					"Last Name: " + jsonObj.lastName + "\n" +
 					"Email: " + jsonObj.emailAddress + "\n" +
 					"Password: " + jsonObj.password + "\n" +
 					"Password Confirmation: " + jsonObj.passConfirm);
-		
+
 		return true;
 	}
 </script>
-	
+
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap-4.4.1.min.js"></script>

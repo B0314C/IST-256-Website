@@ -162,9 +162,9 @@ ul.search-result {
   display: block;
   transition: 0.3s;
 }
-#main {
+/* #main {
   transition: margin-right .5s;
-}
+} */
 
 footer{
 	display:block;
