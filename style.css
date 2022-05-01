@@ -33,7 +33,7 @@ h3 {
 
 h2 {
 	font-family: "Floane", "Optima", "Calibri", sans-serif;
-	font-size: 40px;
+	font-size: 32px;
 	color: #2C2C54;
 	line-height: 0px;
 }
@@ -112,6 +112,11 @@ button.search-result:hover {
 button.search-result {
 	display: block;
 	margin: auto;
+	background-color: #50808E;
+	color: white;
+}
+
+button#sign-up {
 	background-color: #50808E;
 	color: white;
 }
@@ -197,4 +202,8 @@ display: inline-block;
 .leftalignbutton{
 float: left;
 display: inline-block;
+}
+
+label {
+	color: #A40E4C;
 }
