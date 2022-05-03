@@ -70,12 +70,25 @@
 		       <div class="form-group">
 			          <label>Password: </label>
 			          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-			          <p class="invalid" id="pwd-feedback"></p>
+			          <p class="invalid" id="pwd-feedback"></p><br>
 			          <input type="password" class="form-control" id="repwd" placeholder="Confirm password">
 			          <p class="invalid" id="repwd-feedback"></p>
 		       </div>
-		       <button type="submit" id="sign-up" class="btn">Sign Up</button>
+           <a href="">
+       				<div class="gallery leftalignbutton">
+       					 <input style=" color: #A40E4C" type="submit" value="Sign Up" align="center" onClick=Validate()>
+       				 </a>
+
+       				</div>
+
+       				<div class=" gallery rightalignbutton ">
+       					<a href="account-management.html">
+       							<input style=" color: #A40E4C" type="button" value="Return To Account Management." align="center" href="create-account.html" >
+       						</a>
+
+		       <!-- <button type="submit" id="sign-up" class="btn">Sign Up</button> -->
       </div>
+      <br><br>
 	  </form>
 
 <script type="text/javascript">
@@ -151,11 +164,7 @@
 			jsonObj.passConfirm = repwd;
 		}
 
-		window.alert("First Name: " + jsonObj.firstName + "\n" +
-					"Last Name: " + jsonObj.lastName + "\n" +
-					"Email: " + jsonObj.emailAddress + "\n" +
-					"Password: " + jsonObj.password + "\n" +
-					"Password Confirmation: " + jsonObj.passConfirm);
+		window.alert("Account Created");
 
 		return true;
 	}
