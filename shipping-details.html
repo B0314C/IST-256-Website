@@ -12,84 +12,109 @@
 
 <body>
 	<!--Brandon-->
+	<script>
+	function Validate(){
 
+			validateAddress();
+
+		}
+
+			function validateAddress(){
+					var x = document.getElementById('IDofshippingAddress').value;
+
+					if (x.length > 46 || x.length < 6) {
+						alert("Address must contain value between 6 & 46 characters");
+						return false;
+					}
+				}
+				function Othervalidate(){
+
+						}
+
+
+			</script>
 	<!--Catie-->
 	<div class="container">
-		<div class="row">
+
+        <div class="row">
 			<div class="col-sm-7">
 				<h1 class="display-3">Catie's Crystal Cave</h1>
 			</div>
-			<div class="col-sm-1">
-				<a href="search-shop.html"><img class="icon" src="images/search-icon-png-9969.png"></a>
-			</div>
-			<div class="col-sm-1">
-				<a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="images/Instagram-logo-transparent-PNG.png"></a>
-			</div>
-			<div class="col-sm-1">
-				<a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="images/logo-facebookpng-32204.png"></a>
-			</div>
-			<div class="col-sm-1">
-				<a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="images/clipart3654626.png"></a>
-			</div>
-			<div class="col-sm-1">
-				<a><img class="icon" src="images/cart-icon-28356.png"></a>
-			</div>
-		</div>
+
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/search-icon-png-9969.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a><img class="icon" src="images/cart-icon-28356.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="http://www.instagram.com/catiescrystalcave/"><img class="icon" src="images/Instagram-logo-transparent-PNG.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.facebook.com/Caties-Crystal-Cave-104350771739549"><img class="icon" src="images/logo-facebookpng-32204.png"></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="https://www.etsy.com/shop/CatiesCrystalCave"><img class="icon" src="images/clipart3654626.png"></a>
+            </div>
+        </div>
+
 		<div class="row">
 			<div class="col-sm-5">
 				<p>A (very) small tumbling business in York, PA</p>
 			</div>
 			<div class="col-sm-7 menu-row">
-				<a href="index.html" class="menu edge">Contact Us</a>
-				<a href="index.html" class="menu">About Us</a>
-				<a href="account-management.html" class="menu">Account</a>
-				<a href="search-shop.html" class="menu">Shop</a>
+                <a href="index.html" class="menu edge">Contact Us</a>
+                <a href="index.html" class="menu">About Us</a>
+                <a href="ShopperManagementHTML.html" class="menu">Account</a>
+                <a href="index.html" class="menu">Shop</a>
 				<a href="index.html" class="menu">Home</a>
-			</div>
+            </div>
 		</div>
+
 	</div>
+
 	<br><br><br>
 
 <!--Josh-->
-<form name="accountcrubmit=">
+<form name="shippingdetailsform" id="shippingdetailsformID" action="order-complete.html">
   <div class="col-lg-6 offset-lg-3 gallery">
 	  <h2 align="center">Shipping Details</h2>
 	  <br>
 
-	  <label for="Customer Name">Shipping Destination</label>
-    <input  type="text" class="form-control" name="theshippingaddress" placeholder="Shipping Address" id="shippingAddress"  minlength="5" maxlength="46" >
+	  <label style="color: #A40E4C" for="Customer Name">Shipping Destination</label>
+    <input  type="text" class="form-control" name="theshippingaddress" placeholder="Shipping Address" id="IDofshippingAddress"  >
 	  <br>
 
-   	 <label for="shippingCarrier">Choose Shipping Carrier</label>
+   	 <label style="color: #A40E4C" for="shippingCarrier">Choose Shipping Carrier</label>
     <Select class="form-control" name="theShippingCarrier"  placeholder="Choose Carrier" id="theIDShippingCarrier" required>
-			<option value=null></option>
+			<option selected disabled value="">None</option>
 					<option value="USPS">USPS</option>
 		</Select>
 	  <br>
 
-	  <label for="theShippingMethod">Shipping Method</label>
+	  <label style="color: #A40E4C" for="theShippingMethod">Shipping Method</label>
     <Select type="email" class="form-control" name="theShippingMethod"  placeholder="Method" id="theVeryShippingMethod" required>
-<option value=null></option>
+					<option selected disabled value="">None</option>
 					<option value="First Class">First Class: $3.37.....................3-4 business days</option>
-			       <option value="Priority">Priority: $7.37.........................1-3 business days</option>
+			    <option value="Priority">Priority: $7.37.........................1-3 business days</option>
 		 <option value="Priority Express">Priority Express: $23.50..........1-2 business days</option>
 		</Select>
 		<br>
 
 		<a href="billing-details.html">
 				<div class="gallery leftalignbutton">
-				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" onClick=Validate()>
+
+				   <input style=" color: #A40E4C" type="button" value="Billing Details" align="center" >
 				 </a>
 
 				</div>
 
-				<div class=" gallery rightalignbutton ">
-					<a href="order-complete.html">
-				    	<input style=" color: #A40E4C" type="button" value="Submit Order" align="center" onclick="order-complete.html" >
+				<div class=" gallery rightalignbutton " >
+					<a  href="order-complete.html">
+				    	<input style=" color: #A40E4C" type="submit"  value="Submit Order" id="submitshippingbuttonid"align="center" onmouseover="Validate() && Othervalidate()"  >
 						</a>
 				</div>
 		<br><br>
-	</div>
 
 </form>
 
